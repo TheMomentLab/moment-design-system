@@ -15,6 +15,19 @@ export function momentText(text) {
 export function momentDocument(value) {
  const visit=value=>typeof value==='string'?momentText(value):Array.isArray(value)?value.map(visit):value&&typeof value==='object'?Object.fromEntries(Object.entries(value).map(([key,value])=>[key,visit(value)])):value;
  const data=visit(value);
+ if (data?.foundations) {
+  const color=data.foundations.find(item=>item.slug==='color');
+  if(color) {
+   color.purpose='MDS는 Moment Lab의 아이스 블루를 중심으로 연구 도구의 행동·선택·정보를 표현합니다. 브랜드 마크와 UI 전경의 명도를 분리하고 성공·경고·오류의 의미색은 유지합니다.';
+   color.principles=['브랜드 마크는 --ml-brand, 일반 UI는 semantic 역할을 사용합니다.','주요 행동과 선택은 청록 계열로 통일합니다. 마크의 원색을 작은 글자에 직접 사용하지 않습니다.','성공·경고·오류는 실험 상태의 의미를 전달하며 브랜드 강조색으로 대체하지 않습니다.'];
+   color.semanticModel=[['Brand','아이스 블루 마크 · --ml-brand'],['Primary','라이트 #00677D / 다크 #3695AC · 행동과 선택'],['Action surface','두 테마 모두 #00677D + 흰 글자 · 주요 버튼'],['Readable accent','라이트 #00677D / 다크 #79D8EA · 강조 전경'],['Surface','Paper #FBFBFA / Canvas #EDF5FB / Dark #07101A'],['Status','기존 성공·경고·오류 역할과 전경·배경 조합 유지']];
+   color.selectionCriteria.unshift(['주요 행동과 선택','primary-normal 및 component alias','로고의 아이스 블루를 버튼 배경과 작은 글자에 그대로 적용']);
+   color.examples=[['실험 실행','Primary 버튼으로 실행하고 처리 중에는 loading과 상태 이름을 함께 표시'],['실험 결과 비교','선택은 Primary, 결과 계열은 data-viz와 범례로 구분'],['센서 연결 끊김','오류 역할과 아이콘·연결 끊김 문구를 함께 표시'],['연구 기록','본문은 label-normal, 출처 링크는 읽기용 accent 사용']];
+   color.tokens=['--ml-brand','--ml-action-accent','--ml-accent-text','--color-semantic-primary-*','--color-semantic-status-*','--component-*-bg/fg/border'];
+   color.apis=['packages/moment/styles.css','scripts/generate-moment-theme.py','npm run check'];
+  }
+ }
+
  if(!data || !['theme-brand-lk-robotics-logo','theme-brand-product-lockup','theme-status-brand-spinner'].includes(data.slug))return data;
  const product=data.slug==='theme-brand-product-lockup',spinner=data.slug==='theme-status-brand-spinner';
  const property=(name,type,description,required=false)=>({name,type,description,required});
