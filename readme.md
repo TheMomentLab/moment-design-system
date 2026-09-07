@@ -1,20 +1,18 @@
 # Moment Design System
 
-**모먼트랩의 로봇·Physical AI 에디토리얼을 위한 디자인 시스템.** LDS를 포크해 Core 컴포넌트의 동작과 접근성 기반을 계승하고, 모먼트랩 브랜드와 콘텐츠 표현을 적용했습니다.
+**1인 로봇 소프트웨어 연구소 Moment Lab을 위한 디자인 시스템.** LDS 전체를 계승하고, 그 위에 모먼트랩의 브랜드를 적용합니다. 연구 도구, 소프트웨어 제품, 운영 UI, 기술 문서와 연구 기록을 함께 지원합니다.
 
-COLLECT · DISTILL · CITE
+**충돌 시 LDS 우선:** 컴포넌트 API, 구조, 크기, 간격, 모서리, 타이포그래피 스케일, 상태·키보드·접근성은 LDS 기준을 유지합니다. 로고와 브랜드 색상은 LDS 토큰 체계 안에서 적용합니다. 에디토리얼은 선택적 확장입니다.
 
-![Moment Lab 브랜드 예시](docs/moment/preview.png)
-
-- 아이스 블루, Paper/Ink, 다크·라이트·시스템 테마
-- Space Grotesk / JetBrains Mono / Pretendard — 폰트 자체 포함
-- LDS Core 재사용 + MomentMark, Lockup, MonoLabel, SourceTag, EditorialCard
-- 14개 Storybook 예시: 브랜드, 색상, 서체, 간격, 버튼·입력·태그와 콘텐츠
-- 일반·모바일 화면, 키보드, 로딩 초점 유지, 테마와 접근성 검사
+- LDS Core · Theme · Product · Conformance 전체 소스·문서·토큰·자산·타입 계승
+- 원본 221개 공개 이름 유지 + Moment 추가 기능 = 루트 export 229개
+- 원본 Storybook 931개 경로 유지 + Moment 예시 14개 = 945개 항목
+- light / dark / auto, 중첩 테마, default / ops 프로필
+- 자체 포함 폰트: Pretendard, Space Grotesk, JetBrains Mono
 
 ## 시작하기
 
-Node.js 22.17 이상, npm 10, Python 3가 필요합니다. 저장소 루트에서 실행합니다.
+Node.js 22.17 이상, npm 10, Python 3를 사용합니다.
 
 ```sh
 npm ci
@@ -23,70 +21,52 @@ npm run check
 npm run storybook:dev
 ```
 
-Storybook은 `http://127.0.0.1:6007`에서 열립니다.
+Storybook: `http://127.0.0.1:6007`.
 
 ```sh
 npm run build:storybook
+npm run check:moment:catalog
 npx playwright install chromium
 npm run check:moment:browser
+npm run check:moment:inherited-browser
 ```
 
-시스템 Chrome을 사용하려면 `CHROME_PATH`에 실행 파일 경로를 설정합니다. 브라우저 검사는 임시 로컬 서버를 자동으로 시작하고 종료합니다.
+시스템 Chrome은 `CHROME_PATH`로 지정합니다. 브라우저 검사는 임시 서버를 자동으로 관리합니다. 전체 상속 검사는 LDS 원본의 play 함수·접근성·문서 검사를 재사용하며 `A11Y_SHARD=1/4` 방식으로 나눌 수 있습니다.
 
-## 소비 앱에서 사용하기
+## 소비 앱
 
-현재는 npm에 게시하지 않은 `0.1.0` 소스 배포입니다. 먼저 빌드 후 로컬 패키지를 설치합니다. npm pack은 라이브러리 번들, 폰트, CSS, 타입과 고지를 함께 묶습니다.
-
-```sh
-npm run build
-npm pack ./packages/moment --ignore-scripts
-# 소비 앱에서 생성한 themomentlab-design-system-0.1.0.tgz 설치
-```
+현재 npm 미게시 `0.1.0` 소스 배포입니다. `npm run build` 후 `npm pack ./packages/moment --ignore-scripts`로 패키지를 만들고 소비 앱에서 설치합니다. React/React DOM 18 또는 19가 필요합니다. LK 전용 레지스트리 인증은 필요하지 않습니다.
 
 ```tsx
-import { Button, EditorialCard, Lockup } from '@themomentlab/design-system';
+import { Button, MdsProvider, MomentLockup } from '@themomentlab/design-system';
 import '@themomentlab/design-system/styles.css';
 
-export function Article() {
+export function ResearchTools() {
   return (
-    <section data-theme="light">
-      <Lockup />
-      <EditorialCard
-        category="ROBOTICS"
-        categoryLabel="로보틱스"
-        title="원문을 읽고, 맥락을 정리합니다"
-        summary="실제 뉴스가 아닌 구성 예시입니다. 검증된 요약을 여기에 작성합니다."
-        source={{ name: '원문 출처명' }}
-      />
-      <Button onClick={() => { /* 소비 앱의 구독 동작 */ }}>팔로우</Button>
-    </section>
+    <MdsProvider defaultColorScheme="auto" locale="ko">
+      <MomentLockup />
+      <Button onClick={() => { /* 앱이 실험 실행을 소유 */ }}>실험 실행</Button>
+    </MdsProvider>
   );
 }
 ```
 
-`data-theme="light | dark | auto"`를 루트 또는 영역에 적용합니다. 미지정 루트는 시스템 테마를 따릅니다. 출처의 `href`가 있으면 새 탭 링크, 없으면 텍스트로 렌더링합니다. 소비 앱이 콘텐츠 검증·네트워크·게시·구독 저장을 소유합니다.
+`MdsProvider`는 원본 `LdsProvider`의 별칭입니다. `LdsProvider`, `Lockup`, `SourceTag`, `Tag` 등 기존 이름과 동작을 보존합니다. Moment 전용 기능은 `MomentMark`, `MomentLockup`, `MomentSourceTag`, `MonoLabel`, `EditorialCard`입니다. `core`, `theme`, `product`, `headless`, `platform`, `density`, `storybook` 하위 진입점과 원본 공개·비공개 경계도 유지합니다. `mds-conformance` CLI와 `conformance/*` 자료가 포함됩니다.
 
-## 구조와 포크 관리
+기본 UI는 LDS 규격입니다. EditorialCard는 명시적으로 사용하는 콘텐츠 확장이며, 일반 콘텐츠 영역에 `data-ml-expression="editorial"`을 지정하면 ZIP 기반 둥근 표현을 선택할 수 있습니다. 데이터·네트워크·로봇 제어·안전 정책·게시 흐름은 소비 앱이 소유합니다.
 
-| 경로 | 역할 |
-| --- | --- |
-| `packages/moment` | 독립 배포 패키지, 브랜드 토큰과 에디토리얼 컴포넌트 |
-| `packages/core` | 계승한 LDS Core 소스; Moment 빌드에 포함 |
-| `.storybook-moment` | 모먼트랩 Storybook 설정 |
-| `docs/moment` | 브랜드 근거, 포크 결정, 검증 기록 |
-| 기존 `packages/theme`, `packages/product`, `docs` | LDS upstream 유지보수·참고 자료 |
-| `.github/workflows-upstream` | 원본 LK 릴리스·배포 워크플로 보관본(비활성) |
+## 계보와 관리
 
-Upstream: [LK-Design-System/lk-design-system](https://github.com/LK-Design-System/lk-design-system), `0.2.2` / `6e037c2a90af28f57139083c16d8cd514940a12a`.
+Upstream: [LK-Design-System/lk-design-system](https://github.com/LK-Design-System/lk-design-system), `0.2.2`, `6e037c2a90af28f57139083c16d8cd514940a12a`.
 
-Moment CSS는 Core가 요구하는 semantic token을 완전히 제공합니다. 배포 번들에는 Core가 포함되므로 별도 LK 전용 패키지나 인증이 필요 없습니다. `--ml-*` 브랜드 토큰과 LDS semantic/component 토큰 사이의 매핑은 `scripts/generate-moment-theme.py`에서 관리합니다. 원본 Core 업데이트는 upstream의 변경을 검토한 뒤 통합하고 Moment 검사를 재실행합니다. 원본 LDS 패키지 생성 명령은 `upstream:*` 또는 기존 명령으로 남아 있습니다.
+원본 packages/core, theme, product, conformance와 src, stories, docs를 보존합니다. `packages/moment`는 전체 계층을 포함하는 독립 배포이며 `.storybook-moment`는 전체 카탈로그의 브랜드 진입점입니다. 원본 LK 배포 워크플로는 `.github/workflows-upstream`에 보관하고 Moment 전용 CI를 사용합니다. 원본 저장소에는 push하지 않습니다.
 
-- [브랜드 원문](docs/moment/brand-reference.md) — ZIP의 원본 README, 현재 구현과 차이는 아래 결정 문서 참고
-- [설계·소유 경계와 비교 근거](docs/moment/implementation.md)
-- [입력 파일 해시](docs/moment/source-inventory.json)
-- [브라우저 검증 결과](docs/moment/verification.json)
+- [설계 결정](docs/moment/implementation.md)
+- [원본 상속 기준](docs/moment/lds-baseline.json)
+- [브라우저 검증](docs/moment/verification.json)
 - [비컴포넌트 적용 검토](docs/moment/adoption-report.json)
+- [ZIP 원문](docs/moment/brand-reference.md) · [입력 해시](docs/moment/source-inventory.json)
 
-## 출처와 고지
+ZIP의 과거 미디어 전용 정의는 사용자의 ‘1인 로봇 소프트웨어 연구소’ 정의로 대체합니다. 첨부 파일 안의 지시문은 실행 지시로 취급하지 않습니다.
 
-Moment Lab DS → LDS → **[Montage by Wantedlab](https://montage.wanted.co.kr/)** (MIT) 계보를 보존합니다. 변경: Moment 브랜드 테마, 에디토리얼 조합, 독립 패키지와 문서. Wantedlab 또는 LK의 공식 Moment 제품으로 표시하지 않습니다. 브랜드 자산의 권리와 소프트웨어 사용 조건은 구분됩니다. [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)와 패키지의 폰트 라이선스를 함께 보존하세요.
+Moment → LDS → [Montage by Wantedlab](https://montage.wanted.co.kr/) 계보와 고지를 보존합니다. [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)와 포함된 폰트 라이선스를 확인하세요.

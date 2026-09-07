@@ -1,0 +1,13 @@
+# Moment Design System (MDS)
+
+Moment Lab is a one-person robotics software research lab. Media/curation is one activity, not the lab's complete identity. Follow the user's definition over the imported ZIP's narrower media description.
+
+MDS inherits all of LDS Core, Theme, Product and Conformance. Do not reduce the system to editorial controls. The root React export preserves the complete upstream API. Layer subpaths retain public and blocked exports; private helper paths remain private. All original stories, documentation, contracts, assets and profile modes remain available.
+
+Use @themomentlab/design-system/styles.css for the full Moment theme. Core/Theme/Product layer exports and helpers are available as subpaths. MdsProvider is an alias for the original LdsProvider, with the same runtime context, theme, density profile, direction, locale, storage and portal behavior. MomentLockup/MomentSourceTag are additions; Lockup/SourceTag retain their upstream contracts.
+
+Read inherited/core/docs/llms.txt, inherited/theme/docs/llms.txt and inherited/product/docs/llms.txt for complete inherited component and foundation contracts. The inherited conformance CLI is mds-conformance. Root brand tokens use --ml-*; inherited semantic and component token names are intentionally compatible.
+
+Source and decisions: https://github.com/TheMomentLab/moment-design-system
+
+When Moment references conflict, LDS contracts and geometry take priority. Moment primary button fill uses its accessible action color; functional status colors and navigation states stay LDS-owned. Editorial components and data-ml-expression="editorial" are opt-in additions.

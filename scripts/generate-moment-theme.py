@@ -7,10 +7,17 @@ base={}
 for selector,body in blocks:
  if ':root' in selector:base['light']=dict(re.findall(r'(--[\w-]+):\s*([^;]+);',body))
  elif '[data-theme="dark"]' in selector:base['dark']=dict(re.findall(r'(--[\w-]+):\s*([^;]+);',body))
-common={'--font-sans':'var(--ml-font-body)','--font-mono':'var(--ml-font-mono)','--font-display':'var(--ml-font-display)','--fs-body':'var(--ml-body-m)','--lh-body':'var(--ml-leading-body)','--ls-body':'var(--ml-track-tight)','--component-button-radius-sm':'var(--ml-radius-pill)','--component-button-radius-md':'var(--ml-radius-pill)','--component-button-radius-lg':'var(--ml-radius-pill)','--component-button-radius':'var(--ml-radius-pill)','--component-card-radius':'var(--ml-radius-md)','--component-button-shadow-rest':'none','--component-card-shadow':'none','--component-button-primary-bg':'var(--ml-action-bg)','--component-button-primary-fg':'var(--ml-action-fg)','--component-button-signal-bg':'var(--ml-action-accent)','--component-button-signal-fg':'var(--ml-paper)','--component-tag-height':'auto','--component-button-height-md':'44px','--component-card-padding':'var(--ml-space-6)','--ml-content-max':'72rem','--ml-reading-max':'42rem','--ml-duration':'120ms','--ml-accent-text':'var(--ml-action-accent)'}
-light={'--ml-bg':'var(--ml-canvas)','--ml-surface':'var(--ml-paper)','--ml-surface-card':'#FFFFFF','--ml-fg':'var(--ml-ink)','--ml-muted':'#56534E','--ml-line':'#CFCBC4','--ml-action-bg':'var(--ml-ink)','--ml-action-fg':'var(--ml-paper)','--ml-action-accent':'#00677D','--ml-accent-text':'#00677D','--ml-live':'#1F8A5B'}
-dark={'--ml-bg':'var(--ml-dark-bg)','--ml-surface':'var(--ml-dark-surface)','--ml-surface-card':'var(--ml-dark-surface)','--ml-fg':'var(--ml-paper)','--ml-muted':'#ADB8C3','--ml-line':'#405365','--ml-action-bg':'var(--ml-paper)','--ml-action-fg':'var(--ml-dark-bg)','--ml-action-accent':'#00677D','--ml-accent-text':'#79D8EA','--ml-live':'#66C99A'}
+common={'--component-button-primary-bg':'var(--ml-action-accent)','--font-sans':'var(--ml-font-body)','--font-mono':'var(--ml-font-mono)','--font-display':'var(--ml-font-display)','--component-button-signal-bg':'var(--ml-action-accent)','--component-button-signal-fg':'var(--ml-paper)','--ml-content-max':'72rem','--ml-reading-max':'42rem','--ml-duration':'120ms','--ml-accent-text':'var(--ml-action-accent)'}
+light={'--ml-bg':'var(--ml-canvas)','--ml-surface':'var(--ml-paper)','--ml-surface-card':'#FFFFFF','--ml-fg':'var(--ml-ink)','--ml-muted':'#56534E','--ml-line':'#CFCBC4','--ml-action-bg':'#00677D','--ml-action-fg':'var(--ml-paper)','--ml-action-accent':'#00677D','--ml-accent-text':'#00677D','--ml-live':'#1F8A5B'}
+dark={'--ml-bg':'var(--ml-dark-bg)','--ml-surface':'var(--ml-dark-surface)','--ml-surface-card':'var(--ml-dark-surface)','--ml-fg':'var(--ml-paper)','--ml-muted':'#ADB8C3','--ml-line':'#405365','--ml-action-bg':'#00677D','--ml-action-fg':'var(--ml-paper)','--ml-action-accent':'#00677D','--ml-accent-text':'#79D8EA','--ml-live':'#66C99A'}
 maproles={'primary-normal':'var(--ml-action-accent)','primary-strong':'#005569','primary-heavy':'#004455','background-normal-normal':'var(--ml-surface)','background-normal-alternative':'var(--ml-bg)','background-elevated-normal':'var(--ml-surface-card)','background-elevated-alternative':'var(--ml-bg)','label-normal':'var(--ml-fg)','label-strong':'var(--ml-fg)','label-neutral':'var(--ml-fg)','label-alternative':'var(--ml-muted)','label-disable':'var(--ml-muted)','line-normal-normal':'var(--ml-line)','line-solid-normal':'var(--ml-line)','brand-ink':'var(--ml-ink)','brand-surface':'var(--ml-dark-bg)','brand-on-surface':'var(--ml-paper)','focus-indicator':'var(--ml-accent-text)','accent-blue-text':'var(--ml-accent-text)','accent-foreground-blue':'var(--ml-accent-text)','inverse-primary':'#79D8EA','status-positive':'var(--ml-live)','status-positive-text':'var(--ml-live)','status-info-text':'var(--ml-accent-text)'}
+# Functional colors retain LDS authority; brand color is not a status color.
+for role in ['primary-normal','primary-strong','primary-heavy','line-solid-normal','status-positive','status-positive-text','status-info-text']:
+ maproles.pop(role, None)
+# LDS NetworkGraph requires this shared graphics line role to clear 3:1.
+maproles['line-normal-normal']='var(--ml-graphics-line)'
+light['--ml-graphics-line']='#7D8088'
+dark['--ml-graphics-line']='#8B929A'
 # Repeat component aliases at each theme boundary: CSS vars resolve at declaration scope.
 componentAlias={}
 for name in ['components.css','color-components.css']:
@@ -21,13 +28,7 @@ scopes={}
 for mode,m in [('light',light),('dark',dark)]:
  d={**base[mode],**componentAlias,**common,**m}
  d.update({'--color-semantic-'+k:v for k,v in maproles.items()})
- if mode=='dark':d['--color-semantic-primary-normal']='#79D8EA';d['--color-semantic-primary-strong']='#79D8EA'
- # Brand nav values resolve through Moment dark surfaces, not LK navy atomic colors.
- for key in list(d):
-  if key.startswith('--component-side-nav-brand-'):
-   if 'surface' in key:d[key]='var(--ml-dark-surface)'
-   elif 'foreground' in key or 'indicator' in key:d[key]='#79D8EA' if 'active' in key or 'indicator' in key else 'var(--ml-paper)'
-   elif 'divider' in key:d[key]='#405365'
+ if mode=='dark':d['--color-semantic-accent-foreground-blue']='#79D8EA'
  scopes[mode]='\n'.join(f'  {k}: {v};' for k,v in d.items())
 out='/* Moment semantic provider. Generated by scripts/generate-moment-theme.py. */\n'
 out+=':root, [data-theme="light"], [data-theme="auto"], .theme-light {\n  color-scheme: light;\n'+scopes['light']+'\n}\n'

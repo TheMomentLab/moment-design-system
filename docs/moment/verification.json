@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-07T14:00:03.048Z",
+  "date": "2026-09-07T14:34:34.803Z",
   "stories": 14,
   "renderedCases": 56,
   "viewports": [
@@ -18,27 +18,6 @@
   "errors": [],
   "results": [
     {
-      "story": "mds-foundation-identity--identity",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--marks",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--lockups",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
       "story": "mds-foundation-color--palette",
       "width": 1280,
       "theme": "light",
@@ -47,20 +26,6 @@
     },
     {
       "story": "mds-foundation-color--surfaces",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-typography--families",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-spacing--scale",
       "width": 1280,
       "theme": "light",
       "overflow": false,
@@ -118,21 +83,35 @@
     {
       "story": "mds-foundation-identity--identity",
       "width": 1280,
-      "theme": "dark",
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
     {
       "story": "mds-foundation-identity--marks",
       "width": 1280,
-      "theme": "dark",
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
     {
       "story": "mds-foundation-identity--lockups",
       "width": 1280,
-      "theme": "dark",
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-spacing--scale",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-typography--families",
+      "width": 1280,
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
@@ -145,20 +124,6 @@
     },
     {
       "story": "mds-foundation-color--surfaces",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-typography--families",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-spacing--scale",
       "width": 1280,
       "theme": "dark",
       "overflow": false,
@@ -215,22 +180,36 @@
     },
     {
       "story": "mds-foundation-identity--identity",
-      "width": 390,
-      "theme": "light",
+      "width": 1280,
+      "theme": "dark",
       "overflow": false,
       "violations": []
     },
     {
       "story": "mds-foundation-identity--marks",
-      "width": 390,
-      "theme": "light",
+      "width": 1280,
+      "theme": "dark",
       "overflow": false,
       "violations": []
     },
     {
       "story": "mds-foundation-identity--lockups",
-      "width": 390,
-      "theme": "light",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-spacing--scale",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-typography--families",
+      "width": 1280,
+      "theme": "dark",
       "overflow": false,
       "violations": []
     },
@@ -243,20 +222,6 @@
     },
     {
       "story": "mds-foundation-color--surfaces",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-typography--families",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-spacing--scale",
       "width": 390,
       "theme": "light",
       "overflow": false,
@@ -314,21 +279,35 @@
     {
       "story": "mds-foundation-identity--identity",
       "width": 390,
-      "theme": "dark",
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
     {
       "story": "mds-foundation-identity--marks",
       "width": 390,
-      "theme": "dark",
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
     {
       "story": "mds-foundation-identity--lockups",
       "width": 390,
-      "theme": "dark",
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-spacing--scale",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-typography--families",
+      "width": 390,
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
@@ -341,20 +320,6 @@
     },
     {
       "story": "mds-foundation-color--surfaces",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-typography--families",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-spacing--scale",
       "width": 390,
       "theme": "dark",
       "overflow": false,
@@ -404,6 +369,41 @@
     },
     {
       "story": "mds-content-editorial--citation",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-identity--identity",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-identity--marks",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-identity--lockups",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-spacing--scale",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-typography--families",
       "width": 390,
       "theme": "dark",
       "overflow": false,

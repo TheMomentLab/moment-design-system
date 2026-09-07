@@ -2,7 +2,7 @@
 
 ## Moment Lab fork scope
 
-This repository is TheMomentLab/moment-design-system, forked from LDS. The current product entry point is `packages/moment`, with `.storybook-moment` and `docs/moment`. For this explicitly requested brand fork, Moment brand values and editorial decisions in `docs/moment/implementation.md` govern the new layer. Existing LDS Core files and behavior remain upstream-owned; do not change them to fix a Moment-only concern. Validate Moment changes with `npm run build`, `npm run check`, `npm run build:storybook`, and `npm run check:moment:browser`. The original LDS-wide release scripts and archived workflows are upstream maintenance tools, not Moment release requirements. Keep the `main` branch and upstream history; never push to the upstream repository.
+This repository is TheMomentLab/moment-design-system, forked from LDS. Moment Lab is a one-person robotics software research lab. Inherit all LDS Core, Theme, Product and Conformance source, APIs, assets, docs, stories and tooling. When Moment references conflict, prioritize LDS anatomy, geometry, typography scales, states and accessibility; apply the Moment logo/palette within that system. Editorial is optional. See docs/moment/implementation.md. The aggregate lives in packages/moment; preserve upstream source and private API boundaries. Validate with npm run build, npm run check, npm run build:storybook, npm run check:moment:catalog, npm run check:moment:browser and npm run check:moment:inherited-browser. Archived LK release workflows remain upstream reference. Keep main and upstream history; never push upstream.
 
 
 ## Concurrent Agent Coordination

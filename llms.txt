@@ -1,3 +1,7 @@
+# Moment Design System (MDS)
+
+Moment Lab is a one-person robotics software research lab. Inherit all LDS layers. LDS contracts take priority over conflicting Moment reference designs. Start with packages/moment/docs/llms.txt and docs/moment/implementation.md. The following preserved LDS documentation describes inherited contracts and provenance.
+
 # LK Design System AI entry
 
 Canonical machine contract: [docs/references/adoption/LDS_UI_ADOPTION_CONTRACT.json](docs/references/adoption/LDS_UI_ADOPTION_CONTRACT.json)

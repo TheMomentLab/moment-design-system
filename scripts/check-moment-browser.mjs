@@ -14,10 +14,10 @@ const page=await browser.newPage();const failures=[],results=[];const errors=[];
 page.on('pageerror',e=>errors.push(String(e)));
 try {
  const index=JSON.parse(await readFile(path.join(root,'storybook-moment/index.json'),'utf8'));
- const stories=Object.values(index.entries).filter(s=>s.type==='story');
+ const stories=Object.values(index.entries).filter(s=>s.type==='story' && s.id.startsWith('mds-'));
  for(const width of [1280,390])for(const theme of ['light','dark'])for(const story of stories){
   await page.setViewportSize({width,height:960});
-  await page.goto(`${base}/iframe.html?id=${story.id}&viewMode=story&globals=theme:${theme}`);
+  await page.goto(`${base}/iframe.html?id=${story.id}&viewMode=story&mds-audit=1&globals=theme:${theme}`);
   await page.locator('.ml-specimen h1').waitFor();await page.evaluate(()=>document.fonts.ready);
   await page.addScriptTag({path:path.join(root,'node_modules/axe-core/axe.min.js')});
   const audit=await page.evaluate(async()=>{
@@ -28,14 +28,14 @@ try {
   if(audit.overflow||audit.violations.length)failures.push(result);
   if(['mds-foundation-identity--identity','mds-core-controls--buttons','mds-content-editorial--cards','mds-content-editorial--long-content'].includes(story.id))await page.screenshot({path:path.join(output,`${story.id}-${theme}-${width}.png`),fullPage:true});
  }
- await page.goto(`${base}/iframe.html?id=mds-core-controls--interaction&viewMode=story&globals=theme:light`);
+ await page.goto(`${base}/iframe.html?id=mds-core-controls--interaction&viewMode=story&mds-audit=1&globals=theme:light`);
  const increment=page.getByRole('button',{name:'횟수 늘리기'});await increment.focus();await page.keyboard.press('Enter');await page.getByRole('status').filter({hasText:'활성화 횟수: 1'}).waitFor();
  const save=page.getByRole('button',{name:'저장 예시'});await save.focus();await page.keyboard.press('Space');assert.equal(await save.getAttribute('aria-busy'),'true');assert(await save.evaluate(el=>el===document.activeElement));await page.keyboard.press('Enter');assert.equal(await save.getAttribute('aria-busy'),'true');
  await page.getByRole('button',{name:'상태 초기화'}).click();assert.notEqual(await save.getAttribute('aria-busy'),'true');
- await page.goto(`${base}/iframe.html?id=mds-core-controls--chips&viewMode=story&globals=theme:dark`);
+ await page.goto(`${base}/iframe.html?id=mds-core-controls--chips&viewMode=story&mds-audit=1&globals=theme:dark`);
  const filter=page.getByRole('button',{name:'로보틱스',exact:true});await filter.focus();await page.keyboard.press('Space');assert.equal(await filter.getAttribute('aria-pressed'),'true');
- await page.goto(`${base}/iframe.html?id=mds-content-editorial--citation&viewMode=story`);const link=page.getByRole('link').first();assert.equal(await link.getAttribute('target'),'_blank');assert((await link.getAttribute('rel')).includes('noopener'));assert((await link.innerText()).includes('새 탭'));
- await page.emulateMedia({reducedMotion:'reduce',colorScheme:'dark'});await page.goto(`${base}/iframe.html?id=mds-core-controls--buttons&viewMode=story&globals=theme:auto`);await page.locator('.ml-specimen h1').waitFor();assert.equal(await page.locator('main').evaluate(el=>getComputedStyle(el).colorScheme),'dark');
+ await page.goto(`${base}/iframe.html?id=mds-content-editorial--citation&viewMode=story&mds-audit=1`);const link=page.getByRole('link').first();assert.equal(await link.getAttribute('target'),'_blank');assert((await link.getAttribute('rel')).includes('noopener'));assert((await link.innerText()).includes('새 탭'));
+ await page.emulateMedia({reducedMotion:'reduce',colorScheme:'dark'});await page.goto(`${base}/iframe.html?id=mds-core-controls--buttons&viewMode=story&mds-audit=1&globals=theme:auto`);await page.locator('.ml-specimen h1').waitFor();assert.equal(await page.locator('main').evaluate(el=>getComputedStyle(el).colorScheme),'dark');
  const report={date:new Date().toISOString(),stories:stories.length,renderedCases:results.length,viewports:[1280,390],themes:['light','dark'],keyboard:'passed',loadingFocus:'passed',sourceLinks:'passed',autoTheme:'passed',failures,errors,results};
  await writeFile(path.join(root,'docs/moment/verification.json'),JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({stories:stories.length,cases:results.length,failures,errors},null,2));

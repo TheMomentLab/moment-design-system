@@ -2,7 +2,7 @@
   "name": "@themomentlab/design-system",
   "version": "0.1.0",
   "private": true,
-  "description": "Moment Lab design system \u2014 an LDS fork for Korean robotics and Physical AI editorial content.",
+  "description": "Moment Design System — the complete LDS fork for Moment Lab, an independent one-person robotics software research lab.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,7 +12,9 @@
     "assets",
     "styles.css",
     "README.md",
-    "THIRD_PARTY_NOTICES.md"
+    "THIRD_PARTY_NOTICES.md",
+    "inherited",
+    "docs"
   ],
   "sideEffects": [
     "**/*.css"
@@ -25,7 +27,118 @@
     "./styles.css": "./styles.css",
     "./tokens/*": "./tokens/*",
     "./assets/*": "./assets/*",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./core/brand-authoring": {
+      "types": "./dist/core/brand-authoring.d.ts",
+      "import": "./dist/core/brand-authoring.js"
+    },
+    "./core/component-authoring": {
+      "types": "./dist/core/component-authoring.d.ts",
+      "import": "./dist/core/component-authoring.js"
+    },
+    "./core/density": {
+      "types": "./dist/core/density.d.ts",
+      "import": "./dist/core/density.js"
+    },
+    "./core/headless": {
+      "types": "./dist/core/headless.d.ts",
+      "import": "./dist/core/headless.js"
+    },
+    "./core/platform": {
+      "types": "./dist/core/platform.d.ts",
+      "import": "./dist/core/platform.js"
+    },
+    "./core/components/internal/*": null,
+    "./core/components/private/*": null,
+    "./core/components/brand/lk-logo-paths": null,
+    "./core/components/forms/field-shared": null,
+    "./core/components/overlay/anchored-overlay": null,
+    "./core/components/overlay/overlay-platform": null,
+    "./core/components/overlay/anchored-panel-style": null,
+    "./core/components/overlay/dialog-focus": null,
+    "./core/components/selection/pill-chip-style": null,
+    "./core/components/status/status-presentation": null,
+    "./core/components/*": {
+      "types": "./dist/core/components/*.d.ts",
+      "import": "./dist/core/components/*.js"
+    },
+    "./core/styles.css": "./inherited/core/styles.css",
+    "./core/tokens/*": "./inherited/core/tokens/*",
+    "./core/assets/*": "./inherited/core/assets/*",
+    "./core/package.json": "./inherited/core/package.json",
+    "./core/design-system.json": "./inherited/core/docs/manifest.json",
+    "./core/llms.txt": "./inherited/core/docs/llms.txt",
+    "./core/adoption-checklist.json": "./inherited/core/docs/adoption-checklist.json",
+    "./core/docs/*": "./inherited/core/docs/*",
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js"
+    },
+    "./theme/components/*": {
+      "types": "./dist/theme/components/*.d.ts",
+      "import": "./dist/theme/components/*.js"
+    },
+    "./theme/styles.css": "./inherited/theme/styles.css",
+    "./theme/tokens/*": "./inherited/theme/tokens/*",
+    "./theme/assets/*": "./inherited/theme/assets/*",
+    "./theme/package.json": "./inherited/theme/package.json",
+    "./theme/design-system.json": "./inherited/theme/docs/manifest.json",
+    "./theme/llms.txt": "./inherited/theme/docs/llms.txt",
+    "./theme/adoption-checklist.json": "./inherited/theme/docs/adoption-checklist.json",
+    "./theme/docs/*": "./inherited/theme/docs/*",
+    "./product": {
+      "types": "./dist/product/index.d.ts",
+      "import": "./dist/product/index.js"
+    },
+    "./product/components/*": {
+      "types": "./dist/product/components/*.d.ts",
+      "import": "./dist/product/components/*.js"
+    },
+    "./product/storybook": {
+      "types": "./dist/product/storybook.d.ts",
+      "import": "./dist/product/storybook.js"
+    },
+    "./product/styles.css": "./inherited/product/styles.css",
+    "./product/tokens/*": "./inherited/product/tokens/*",
+    "./product/assets/*": "./inherited/product/assets/*",
+    "./product/package.json": "./inherited/product/package.json",
+    "./product/design-system.json": "./inherited/product/docs/manifest.json",
+    "./product/llms.txt": "./inherited/product/docs/llms.txt",
+    "./product/adoption-checklist.json": "./inherited/product/docs/adoption-checklist.json",
+    "./product/docs/*": "./inherited/product/docs/*",
+    "./headless": {
+      "types": "./dist/core/headless.d.ts",
+      "import": "./dist/core/headless.js"
+    },
+    "./platform": {
+      "types": "./dist/core/platform.d.ts",
+      "import": "./dist/core/platform.js"
+    },
+    "./density": {
+      "types": "./dist/core/density.d.ts",
+      "import": "./dist/core/density.js"
+    },
+    "./component-authoring": {
+      "types": "./dist/core/component-authoring.d.ts",
+      "import": "./dist/core/component-authoring.js"
+    },
+    "./brand-authoring": {
+      "types": "./dist/core/brand-authoring.d.ts",
+      "import": "./dist/core/brand-authoring.js"
+    },
+    "./storybook": {
+      "types": "./dist/product/storybook.d.ts",
+      "import": "./dist/product/storybook.js"
+    },
+    "./conformance/*": "./inherited/conformance/*",
+    "./design-system.json": "./docs/manifest.json",
+    "./llms.txt": "./docs/llms.txt",
+    "./adoption-checklist.json": "./docs/adoption-checklist.json",
+    "./docs/*": "./docs/*"
   },
   "peerDependencies": {
     "react": ">=18 <20",
@@ -35,5 +148,14 @@
     "type": "git",
     "url": "git+https://github.com/TheMomentLab/moment-design-system.git",
     "directory": "packages/moment"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "semver": "^7.7.3",
+    "typescript": "5.9.3"
+  },
+  "bin": {
+    "mds-conformance": "./inherited/conformance/src/cli.mjs"
   }
 }

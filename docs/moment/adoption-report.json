@@ -35,7 +35,7 @@
           "decisions": [
             {
               "decisionId": "owner-package-css-order",
-              "outcome": "Moment styles.css imports inherited Core geometry and theme defaults before Moment semantic and component mappings; no separate LDS provider is required.",
+              "outcome": "Moment styles.css includes Core, Theme and Product styles, default/ops profiles and Moment semantic mappings. MdsProvider aliases the complete original LdsProvider runtime.",
               "evidence": [
                 {
                   "kind": "token",
@@ -49,7 +49,7 @@
             },
             {
               "decisionId": "font-theme-scope",
-              "outcome": "All three font families are self-hosted with licenses. Root/section data-theme creates the provider boundary.",
+              "outcome": "All three font families are self-hosted. Inherited provider supports root targets, portals, direction, locale and profiles; data-theme also supports nested explicit scopes.",
               "evidence": [
                 {
                   "kind": "token",
@@ -77,7 +77,7 @@
             },
             {
               "decisionId": "token-mapping",
-              "outcome": "135 Core semantic requirements have declarations. Exact brand OKLCH is preserved, readable action/text roles are separate.",
+              "outcome": "All 298 Core/Product semantic requirements have reachable declarations. Exact brand OKLCH is preserved with separate readable action/text roles.",
               "evidence": [
                 {
                   "kind": "token",
@@ -91,7 +91,7 @@
             },
             {
               "decisionId": "raw-visual-literals",
-              "outcome": "Theme values are owned by the Moment generator and reference token files; geometry follows ZIP scales or inherited Core anatomy.",
+              "outcome": "Moment generator owns brand colors; LDS owns component geometry, type scales, states and interaction contracts.",
               "evidence": [
                 {
                   "kind": "token",
@@ -177,7 +177,7 @@
             },
             {
               "decisionId": "visual-foundation-mapping",
-              "outcome": "4px spacing base, 12px cards, pill actions, flat dark/light backgrounds. Photography and publishing frame aspect ratios stay consumer-owned.",
+              "outcome": "Default geometry, typography scales, radius and elevations follow LDS. ZIP pill/card curvature requires explicit editorial scope.",
               "evidence": [
                 {
                   "kind": "source",
@@ -207,7 +207,7 @@
           "decisions": [
             {
               "decisionId": "async-state-model",
-              "outcome": "Ready, loading, disabled, error and recovery are shown using Core controls. Feed empty/stale/offline states are consumer-owned; DS performs no fetching.",
+              "outcome": "All original Core and Product states and patterns are inherited, including viewer/resource/data-operation states. Transport, robots and application lifecycle are consumer-owned.",
               "evidence": [
                 {
                   "kind": "source",
@@ -279,7 +279,7 @@
           "decisions": [
             {
               "decisionId": "registry-search",
-              "outcome": "Core SourceTag, Overline, Chip, Button and Card were inspected before implementing Moment wrappers.",
+              "outcome": "Existing Button, Tag, Chip, Card, Overline, SourceTag and Lockup inspected. All original names retained; additions use Moment-prefixed names where they overlap.",
               "evidence": [
                 {
                   "kind": "asset",
@@ -365,7 +365,7 @@
           "decisions": [
             {
               "decisionId": "copy-product-truth",
-              "outcome": "No example is presented as live news. Editorial samples visibly identify themselves as templates.",
+              "outcome": "Moment Lab is a one-person robotics software research lab. Media is optional research sharing. Samples are labelled examples, not live research results.",
               "evidence": [
                 {
                   "kind": "copy-catalog",
@@ -465,7 +465,7 @@
             },
             {
               "decisionId": "keyboard-focus-restoration",
-              "outcome": "Core Button Enter/Space activation and loading focus retention are verified; no new overlay or focus trap is authored.",
+              "outcome": "Original interactions and play functions retained for all inherited stories. Moment checks cover button activation, loading focus and native citation links.",
               "evidence": [
                 {
                   "kind": "check",
@@ -493,7 +493,7 @@
             },
             {
               "decisionId": "target-pointer-alternatives",
-              "outcome": "Default actions are 44px; compact controls retain Core sizes >=24px; keyboard activation does not require a pointer.",
+              "outcome": "Original LDS target dimensions and keyboard alternatives are retained; no global 44px replacement. Original accessibility target-size baseline remains enforced.",
               "evidence": [
                 {
                   "kind": "check",
@@ -507,7 +507,7 @@
             },
             {
               "decisionId": "contrast-non-color-cues",
-              "outcome": "All 56 rendered cases pass automated WCAG A/AA checks, including text contrast; filters expose pressed state independently of color.",
+              "outcome": "Moment browser checks exercise both themes and widths; inherited accessibility guard retains original rules and target-size baseline. Results are recorded separately without weakening thresholds.",
               "evidence": [
                 {
                   "kind": "check",
@@ -566,7 +566,7 @@
           },
           {
             "decisionId": "reuse-composition-choice",
-            "outcome": "Button is unchanged Core, Tag aliases Chip, MonoLabel composes Overline, SourceTag composes Core SourceTag, EditorialCard composes Card.",
+            "outcome": "All original Core/Theme/Product APIs remain unchanged. MomentLockup, MomentSourceTag, MonoLabel and EditorialCard compose existing primitives.",
             "evidence": [
               {
                 "kind": "source",

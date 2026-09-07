@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "packageManager": "npm@10.9.2",
   "private": true,
-  "description": "Moment Lab design system \u2014 an LDS fork for Korean robotics and Physical AI editorial content.",
+  "description": "Moment Design System: complete LDS inheritance for Moment Lab, a one-person robotics software research lab.",
   "workspaces": [
     "packages/*"
   ],
@@ -78,9 +78,9 @@
     "check:storybook-adoption": "node scripts/check-storybook-adoption-files.mjs",
     "check:adoption": "node scripts/generate-lds-adoption-docs.mjs --check && node scripts/check-package-docs.mjs",
     "check:adoption-fixtures": "node packages/conformance/src/cli.mjs verify-adoption-contract && node packages/conformance/src/cli.mjs verify-adoption-fixtures",
-    "storybook:dev": "storybook dev -p 6007 --host 127.0.0.1 --no-open -c .storybook-moment",
-    "storybook": "storybook dev -p 6007 --host 127.0.0.1 --no-open -c .storybook-moment",
-    "build:storybook": "storybook build -c .storybook-moment -o storybook-moment",
+    "storybook:dev": "node scripts/prepare-moment-catalog.mjs && storybook dev -p 6007 --host 127.0.0.1 --no-open -c .storybook-moment",
+    "storybook": "node scripts/prepare-moment-catalog.mjs && storybook dev -p 6007 --host 127.0.0.1 --no-open -c .storybook-moment",
+    "build:storybook": "node scripts/prepare-moment-catalog.mjs && storybook build -c .storybook-moment -o storybook-moment",
     "prepack": "node scripts/run-package-scripts.mjs build",
     "extract:wds-fig-content": "node scripts/extract-wds-fig-content.mjs",
     "check:wds-local-fig": "node scripts/check-wds-local-fig-content.mjs",
@@ -164,7 +164,9 @@
     "upstream:check": "node scripts/run-package-scripts.mjs check:fast check:storybook check:pack",
     "build:moment": "node scripts/build-moment.mjs",
     "check:moment": "node scripts/check-moment.mjs",
-    "check:moment:browser": "node scripts/check-moment-browser.mjs"
+    "check:moment:browser": "node scripts/check-moment-browser.mjs",
+    "check:moment:catalog": "node scripts/check-moment-catalog.mjs",
+    "check:moment:inherited-browser": "node scripts/check-moment-inherited-browser.mjs"
   },
   "peerDependencies": {
     "react": ">=18 <20",

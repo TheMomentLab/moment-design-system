@@ -1,4 +1,4 @@
-/* Complete standalone Moment theme + inherited LDS Core foundations. */
+/* Complete standalone Moment theme + inherited LDS Core/Theme/Product foundations. */
 @import "./tokens/fonts.css";
 @import "./tokens/upstream/color-atomic.css";
 @import "./tokens/upstream/color-semantic.css";
@@ -7,6 +7,7 @@
 @import "./tokens/upstream/spacing.css";
 @import "./tokens/upstream/grid.css";
 @import "./tokens/upstream/components.css";
+@import "./inherited/product/tokens/components.css";
 @import "./tokens/upstream/base.css";
 @import "./tokens/upstream/focus.css";
 @import "./tokens/colors.css";
@@ -14,3 +15,4 @@
 @import "./tokens/spacing.css";
 @import "./tokens/theme.css";
 @import "./tokens/components.css";
+@import "./inherited/theme/tokens/profiles.css";

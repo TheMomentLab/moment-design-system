@@ -4,10 +4,10 @@ import { SourceTag as CoreSourceTag } from '../../core/src/components/content/So
 import { Overline } from '../../core/src/components/content/Overline.jsx';
 import { MomentMark } from './MomentMark.jsx';
 
-export function Lockup({ layout = 'horizontal', size = 'md', className = '', ...rest }) {
+export function MomentLockup({ layout = 'horizontal', size = 'md', className = '', ...rest }) {
   return <div className={`ml-lockup ml-lockup--${layout} ml-lockup--${size} ${className}`} {...rest}>
     <MomentMark size={size === 'sm' ? 36 : 64} decorative />
-    <span className="ml-lockup__name">MOMENT LAB<span className="ml-lockup__subtitle">로봇과 Physical AI 소식을 전합니다</span></span>
+    <span className="ml-lockup__name">MOMENT LAB<span className="ml-lockup__subtitle">1인 로봇 소프트웨어 연구소</span></span>
   </div>;
 }
 
@@ -17,7 +17,7 @@ export function MonoLabel({ children, translation, ...rest }) {
   </Overline>;
 }
 
-export function SourceTag({ children, href, className = '', ...rest }) {
+export function MomentSourceTag({ children, href, className = '', ...rest }) {
   // Source attribution is readable with or without a URL; only an actual URL creates a link.
   return <CoreSourceTag {...rest} href={href} className={`ml-source-tag ${className}`}>
     {children}{href && <span className="ml-sr-only"> (새 탭에서 원문 열기)</span>}
@@ -30,6 +30,6 @@ export function EditorialCard({ category = 'ROBOTICS', categoryLabel = '로보�
     <MonoLabel translation={categoryLabel}>{category}</MonoLabel>
     <Heading className="ml-editorial-card__title">{title}</Heading>
     <p className="ml-editorial-card__summary">{summary}</p>
-    <footer className="ml-editorial-card__source"><SourceTag href={source.href}>{source.name}</SourceTag></footer>
+    <footer className="ml-editorial-card__source"><MomentSourceTag href={source.href}>{source.name}</MomentSourceTag></footer>
   </Card>;
 }

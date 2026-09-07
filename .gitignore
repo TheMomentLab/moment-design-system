@@ -47,3 +47,8 @@ tmp/
 # Moment Lab outputs
 storybook-moment/
 artifacts/moment/
+
+# Generated complete inherited package assets
+packages/moment/inherited/
+.mds-catalog/
+scripts/.moment-inherited-*.generated.mjs

@@ -18,6 +18,8 @@ jobs:
       - run: npm ci
       - run: npm run build && npm run check
       - run: npm run build:storybook
+      - run: npm run check:moment:catalog
+      - run: node packages/moment/inherited/conformance/src/cli.mjs verify-fixtures
       - run: npx playwright install --with-deps chromium
       - run: npm run check:moment:browser
       - uses: actions/upload-artifact@v4
@@ -28,3 +30,26 @@ jobs:
             storybook-moment
             artifacts/moment
             docs/moment/verification.json
+  inherited:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/setup-node@v6.4.0
+        with:
+          node-version: '22.17.1'
+          cache: npm
+      - run: npm ci
+      - run: npm run build && npm run build:storybook
+      - run: npx playwright install --with-deps chromium
+      - run: npm run check:moment:inherited-browser
+        env:
+          A11Y_SHARD: ${{ matrix.shard }}/4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: inherited-evidence-${{ matrix.shard }}
+          path: artifacts/moment/inherited-accessibility
