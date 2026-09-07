@@ -33,3 +33,7 @@ All 196 original story files are unchanged. A generated catalog changes display 
 Build and strict consumer types, all 298 Core/Product semantic requirements, package portability, Moment light/dark × desktop/mobile specimens, keyboard/loading focus, inherited play-function/accessibility/target-size/documentation guards are separate checks. Browser outputs live in verification.json and artifacts/moment/inherited-accessibility. This is verification of the fork, not a claim of upstream release certification.
 
 The ZIP's README is retained verbatim in brand-reference.md as historical evidence. Input hashes remain in source-inventory.json. Original supplied HTML is not executed and sample photographs are not redistributed. Product fetching, persistence, robot control/safety policy, research validation and publication remain consumer responsibilities.
+
+## Browser lifecycle adaptation
+
+The generated catalog waits for rendered fonts and two animation frames before invoking each unchanged original play function. This avoids measuring MetricCard footers while a self-hosted font is swapping. SplitButton's generated test also waits two frames after Escape before intentionally focusing the viewport-edge trigger: the inherited useMenuKeyboard schedules focus restoration with requestAnimationFrame. No assertion, timeout, accessibility threshold or component behavior is removed or relaxed; original source files remain unchanged.

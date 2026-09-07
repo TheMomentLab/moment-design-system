@@ -24,6 +24,18 @@ async function walk(dir) {
           const explicit = new RegExp(`\\bid:\\s*['\"]${id}['\"]`).test(original);
           return `${explicit ? '' : `id: '${id}', `}title: ${quote}${title.replace(/^LDS/, 'MDS')}${quote}`;
         });
+        // The fork loads self-hosted fonts. Measure only after the rendered fonts
+        // and layout settle; run every original play assertion unchanged.
+        for (const [, name] of original.matchAll(/export const (\w+)\s*=/g)) {
+          text += `\nif (typeof ${name}.play === 'function') { const originalPlay = ${name}.play; ${name}.play = async (context) => { await context.canvasElement.ownerDocument.fonts.ready; await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))); return originalPlay(context); }; }\n`;
+        }
+        if (relative === 'ActionSplitButton.stories.jsx') {
+          const step = '    edgeTrigger.focus();';
+          if (!text.includes(step)) throw new Error('Upstream SplitButton focus step changed');
+          // Escape schedules focus restoration for the next frame. Let that
+          // restoration finish before the test intentionally moves elsewhere.
+          text = text.replace(step, '    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));\n' + step);
+        }
         files.push({ source: 'stories/' + relative, generated: '.mds-catalog/' + relative, sha256: createHash('sha256').update(original).digest('hex') });
       }
       await writeFile(file, text);
