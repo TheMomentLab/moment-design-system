@@ -1,0 +1,7 @@
+import React from 'react';
+import { EditorialCard, Button } from '../src/index.jsx';
+import { Header } from './shared.jsx';
+export default { title: 'MDS/Foundation/Color' };
+const colors=[['Ice blue','--ml-brand','oklch(0.60 0.18 208)'],['Paper','--ml-paper','#FBFBFA'],['Canvas','--ml-canvas','#EDF5FB'],['Ink','--ml-ink','#141414'],['Dark','--ml-dark-bg','#07101A'],['Action accent','--ml-action-accent','#00677D']];
+export const Palette = { name: '브랜드 팔레트', render: () => <div><Header title="Color">차분한 모노크롬 위에 아이스 블루. 브랜드 컬러와 읽는 글자의 색상을 구분합니다.</Header><div className="ml-color-list">{colors.map(([name,token,value])=><div key={token}><div className="ml-color-swatch" style={{background:`var(${token})`}}/><h3>{name}</h3><div className="ml-token-name">{token}<br/>{value}</div></div>)}</div><h2>표면에 따라 읽기 좋은 색으로</h2><p>로고는 원본 아이스 블루를 사용합니다. 본문 링크는 라이트에서 깊은 블루, 다크에서 밝은 블루로 바뀝니다. 녹색은 업데이트 상태에만 사용합니다.</p></div> };
+export const Surfaces = { name: '라이트와 다크', render: () => <div><Header title="Surfaces">동일한 컴포넌트가 배경의 의미에 맞춰 바뀝니다.</Header><div className="ml-specimen-grid">{['light','dark'].map(theme=><section key={theme} data-theme={theme} className="ml-specimen-panel"><EditorialCard title="원문을 읽고, 맥락을 정리합니다" summary="카드 구성 예시입니다. 원문의 핵심 내용과 요약자의 해석을 구분해 작성합니다." source={{name:'원문 출처 예시'}}/><div style={{marginTop:24}}><Button>내용 확인</Button></div></section>)}</div></div> };

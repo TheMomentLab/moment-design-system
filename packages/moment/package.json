@@ -1,0 +1,39 @@
+{
+  "name": "@themomentlab/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Moment Lab design system \u2014 an LDS fork for Korean robotics and Physical AI editorial content.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "tokens",
+    "assets",
+    "styles.css",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./styles.css",
+    "./tokens/*": "./tokens/*",
+    "./assets/*": "./assets/*",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMomentLab/moment-design-system.git",
+    "directory": "packages/moment"
+  }
+}

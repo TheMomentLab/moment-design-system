@@ -1,0 +1,36 @@
+/* ============================================================
+   Moment Lab — Spacing, radius, shadow tokens
+   Calm 4px-based rhythm; cards use a 12px radius and a single
+   soft shadow; pills are fully rounded.
+   ============================================================ */
+:root {
+  /* — Spacing scale (4px base) ————————————————— */
+  --ml-space-1:  4px;
+  --ml-space-2:  8px;
+  --ml-space-3:  12px;
+  --ml-space-4:  16px;
+  --ml-space-5:  24px;
+  --ml-space-6:  32px;
+  --ml-space-7:  48px;
+  --ml-space-8:  64px;
+  --ml-space-9:  84px;
+
+  /* — Radius ————————————————————————————————— */
+  --ml-radius-sm:   8px;    /* inset grids */
+  --ml-radius-md:   12px;   /* cards */
+  --ml-radius-lg:   24px;   /* large brand tiles */
+  --ml-radius-pill: 999px;  /* buttons, tags, chips */
+
+  /* — Border widths ——————————————————————————— */
+  --ml-hairline: 1px;
+  --ml-outline:  1.5px;     /* secondary button border */
+
+  /* — Shadow ————————————————————————————————— */
+  --ml-shadow-card: 0 1px 4px rgba(20,20,20,0.12);   /* avatar / raised */
+  --ml-shadow-art:  0 6px 28px rgba(0,0,0,0.18);     /* card-news frames */
+
+  /* — Mark geometry (the moment-mark) ——————————— */
+  --ml-mark-stroke: 6;     /* of 100 viewBox */
+  --ml-mark-min:    16px;  /* absolute minimum render size */
+  --ml-mark-tap:    44px;  /* recommended interactive size */
+}

@@ -1,0 +1,416 @@
+{
+  "archive": "Moment Lab.zip",
+  "upstreamCommit": "6e037c2a90af28f57139083c16d8cd514940a12a",
+  "files": [
+    {
+      "path": ".thumbnail",
+      "sha256": "771dd4036aecd84bdbd04f813df55c6a7681825b2f7076167bd09f31636355c9",
+      "bytes": 2066
+    },
+    {
+      "path": "Canvas.dc.html",
+      "sha256": "d3a65cc8ce0e759849eaa1ca985d0fbc49bafb3212f9029731ca08d1bda42293",
+      "bytes": 206
+    },
+    {
+      "path": "Moment Lab - CI Color Directions.dc.html",
+      "sha256": "77706f69bde7b9200fb3b0ff06776546e6d45c20ea9da7d3468ee1431c5c680c",
+      "bytes": 15322
+    },
+    {
+      "path": "Moment Lab - CI Color Guide.dc.html",
+      "sha256": "4810d1d81a79afc18dfe9c6679625d5d10a2ade4074e1a1cd914342f905d21b7",
+      "bytes": 29690
+    },
+    {
+      "path": "Moment Lab - Card News - Editorial.dc.html",
+      "sha256": "7a7ce53e91d6523f5392d1063755633218b9c05a5214c4c81818be0e31c5d91b",
+      "bytes": 12794
+    },
+    {
+      "path": "Moment Lab - Card News Template.dc.html",
+      "sha256": "f87f8970cf94de1b676fba53024e5dcf05fc31ec21ec0c57a6f060c92f59e9b8",
+      "bytes": 16544
+    },
+    {
+      "path": "Moment Lab - Color Exploration.dc.html",
+      "sha256": "3758c1f0cee786df529a88c1ccd3ede7e6465f192c5d4ab28a7f2fd103902353",
+      "bytes": 8310
+    },
+    {
+      "path": "Moment Lab - Company Page Cover 1128x191.png",
+      "sha256": "8b807779977b6d07aa8e59b713fbde7e8e643c937c90f36b7ef81ed41d825730",
+      "bytes": 29150
+    },
+    {
+      "path": "Moment Lab - GitHub Avatar.dc.html",
+      "sha256": "6377fd31302d56a97158e287fcd4d437d6618f28f6bdc0ff69f8d4b67f9ae910",
+      "bytes": 6683
+    },
+    {
+      "path": "Moment Lab - LinkedIn Banner.dc.html",
+      "sha256": "0f09cbfe53cbe42f977caa72edff6f891d7e197f88395c8e27d51f1734a895b1",
+      "bytes": 2514
+    },
+    {
+      "path": "Moment Lab - LinkedIn Cover (Company).dc.html",
+      "sha256": "fb6ace6c915b64a4abc233b50d6b8f13a40a053c6317ab5fc25384228cd9b24d",
+      "bytes": 2510
+    },
+    {
+      "path": "Moment Lab - Profile Banner 1584x396.png",
+      "sha256": "43732408969a90ade9a06ec6a501ca2ba40778dbd34cb623cb61ec95a7cd8153",
+      "bytes": 57546
+    },
+    {
+      "path": "Moment Lab Logo - Guide.dc.html",
+      "sha256": "27b22517676af3d155a2cf985c640b9838a9d0f6360409a54e01a0f0b750c37a",
+      "bytes": 21440
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "476a919a8ceacd2b22b10801e0f5fa602f04ba036444131a78c962d6299bcdf5",
+      "bytes": 2119
+    },
+    {
+      "path": "applications/banner.card.html",
+      "sha256": "da3a2a2786fde55db735e6fa6f4dc6f2710c39ba2191de920df853d9f4d4f396",
+      "bytes": 546
+    },
+    {
+      "path": "applications/card-news-editorial.card.html",
+      "sha256": "57ed8f2c99207f7b159046dd3e528557452a13ffbecb904d41b3763720c86038",
+      "bytes": 564
+    },
+    {
+      "path": "applications/card-news-signal.card.html",
+      "sha256": "de47b9c280c0230f1c1125d5b2d67a5b709f2ed698807b5c39258ba04f59db98",
+      "bytes": 554
+    },
+    {
+      "path": "applications/cover.card.html",
+      "sha256": "7b5595d5e63a6e8bfe44d5b54a2d1d78004abcff6ff30766b6cc4d9bd1acdc38",
+      "bytes": 565
+    },
+    {
+      "path": "applications/page.card.html",
+      "sha256": "b4db8f3d745519641f9b27a2a26098f551d5a679051d722ef08e8beba96b2237",
+      "bytes": 563
+    },
+    {
+      "path": "assets/moment-avatar-ink.png",
+      "sha256": "5fae8cca732f28d516fc3592f352b387c06c71cd5b639a500a7597fd115504d9",
+      "bytes": 52852
+    },
+    {
+      "path": "assets/moment-avatar-paper.png",
+      "sha256": "c8cdc4036c4d01494d3677153d9008a1927ed02a65f75b29b211d737eeccadc1",
+      "bytes": 51951
+    },
+    {
+      "path": "assets/moment-mark-white.png",
+      "sha256": "e2b7d067b4fd0ebb14195354ce9f9ca5a3f003f200b7bae6ddfa7586abb5a9bc",
+      "bytes": 51573
+    },
+    {
+      "path": "assets/moment-mark.png",
+      "sha256": "114732a21048762b7a7009923c82fd9f7e7054cb7dc7e1001f217e0be3262430",
+      "bytes": 49686
+    },
+    {
+      "path": "assets/moment-mark.svg",
+      "sha256": "c3a0e42a7fbaa66b45f3b02f635f1c1734b29752db6e9269f8187d36f1035a7c",
+      "bytes": 496
+    },
+    {
+      "path": "components/brand/Lockup.d.ts",
+      "sha256": "353be5c573cd2b4db04736ed38c85811c9f67b1aa101088eb93773d5316e22ec",
+      "bytes": 755
+    },
+    {
+      "path": "components/brand/Lockup.jsx",
+      "sha256": "b60b97c640c47c2dcd2979fbc380d59728cd6b2e363da3b329bca453bb820bf2",
+      "bytes": 2217
+    },
+    {
+      "path": "components/brand/Lockup.prompt.md",
+      "sha256": "61c124681ad2a699679da5566e2c91f79758de8e3dc25d6ec71d55932cf7e36d",
+      "bytes": 551
+    },
+    {
+      "path": "components/brand/MomentMark.d.ts",
+      "sha256": "29cc9c31a51665caf96525c62e4bb3271ae400903a4f3435bce091b6b9f9fbe0",
+      "bytes": 639
+    },
+    {
+      "path": "components/brand/MomentMark.jsx",
+      "sha256": "4a16826b7a91fb5a258bb234c04acbeed7fbfab2569189e5136c581db5a31f13",
+      "bytes": 1294
+    },
+    {
+      "path": "components/brand/MomentMark.prompt.md",
+      "sha256": "3511e8bb521621ab4d759b5440803e46682b7f89c7707865b07877f19bbebcb1",
+      "bytes": 549
+    },
+    {
+      "path": "components/brand/brand.card.html",
+      "sha256": "a76c59fee87e043d2970be97d1bff7955613280f9da4754121c690d94ac8853f",
+      "bytes": 3299
+    },
+    {
+      "path": "components/content/MonoLabel.d.ts",
+      "sha256": "84f589773bef2953fedb28946c24d31c12c127ccc1129f32fb6dd76888566671",
+      "bytes": 577
+    },
+    {
+      "path": "components/content/MonoLabel.jsx",
+      "sha256": "79f3ae3c80ad03ac0a413cadf68b791f13ab09aa7c8d2616c866d4d607609f0b",
+      "bytes": 958
+    },
+    {
+      "path": "components/content/MonoLabel.prompt.md",
+      "sha256": "49c805a377e78c0fca4ce3dff3089a2cdeb55d18e019228214020949062a14b5",
+      "bytes": 516
+    },
+    {
+      "path": "components/content/SourceTag.d.ts",
+      "sha256": "62c2d5fa88e808fcf4fd4c0f475298ad3af656e9fc2e27416091ace5404f6d09",
+      "bytes": 507
+    },
+    {
+      "path": "components/content/SourceTag.jsx",
+      "sha256": "7911b4a87c718aa4cb8c105b4bab716a5e4a0fdcad010edf8e6f64559113e634",
+      "bytes": 1646
+    },
+    {
+      "path": "components/content/SourceTag.prompt.md",
+      "sha256": "9a301b7154ed7bb7ff3964564ef414d70ee4b529ee9937194bcfc7bc8851d6c2",
+      "bytes": 476
+    },
+    {
+      "path": "components/content/content.card.html",
+      "sha256": "ea1c041f1ff27394eb7c12a15f4a3ec43597103048a5f4c0ce4fec3f12156617",
+      "bytes": 2463
+    },
+    {
+      "path": "components/core/Button.d.ts",
+      "sha256": "8e226d97c2a16fc2fffee5e82b95da6dcc12b4e711cab4f4f522c4016c981543",
+      "bytes": 542
+    },
+    {
+      "path": "components/core/Button.jsx",
+      "sha256": "11f73ec4a7513cb774eb42c8f7ef8c7210763bbdb22f8cbde7b0fb344f99e514",
+      "bytes": 1313
+    },
+    {
+      "path": "components/core/Button.prompt.md",
+      "sha256": "e07ea47d51981ab6aba0a5b6da2cb7183db05135148c080ac763abc6d3a88ad2",
+      "bytes": 467
+    },
+    {
+      "path": "components/core/Tag.d.ts",
+      "sha256": "93a2b6434b78c5d63ec3ecfd72bc3f7d802428acea4ab6220d8f6b6fc867476a",
+      "bytes": 248
+    },
+    {
+      "path": "components/core/Tag.jsx",
+      "sha256": "a1e85b78364f3bd0824d3020299e2cb11f0daa4ba35a3242314b647ebf0c7525",
+      "bytes": 790
+    },
+    {
+      "path": "components/core/Tag.prompt.md",
+      "sha256": "212ffcb5fdd0abaf0170c9f9717ddf078d860e0be069be916d6ed0c3298a0dd0",
+      "bytes": 328
+    },
+    {
+      "path": "components/core/core.card.html",
+      "sha256": "fb6ed156d696f9072aaff6ccf2f8bc5abb58e630bddd6f9ad566416b4c82b9fd",
+      "bytes": 2172
+    },
+    {
+      "path": "exports/Moment Lab - LinkedIn Cover 1128x191.png",
+      "sha256": "3acfe89d7bfeebfd1dd39cc04bd58facc2de86e9b437f6f1612b5ea35d322a3e",
+      "bytes": 30028
+    },
+    {
+      "path": "exports/mark-size-compare.png",
+      "sha256": "e94285c62c1adf0cf0723a6a52be9ffb9229d8d2c195298a11a7e2f523e84ff2",
+      "bytes": 51004
+    },
+    {
+      "path": "exports/moment-mark-dark-460.png",
+      "sha256": "9f34402d775bd3b89f6baed661457f30ac29835b6584cc1056e8bcbb9db87e67",
+      "bytes": 16046
+    },
+    {
+      "path": "exports/moment-mark-test.png",
+      "sha256": "d14c2bab950c65955fb8c72c56e79010a422e074a6ce19c8517929454025eb13",
+      "bytes": 10178
+    },
+    {
+      "path": "exports/moment-mark-transparent-512.png",
+      "sha256": "a7b470c8951e164983ec972030c46924c28ad2958535d37952a4362fed5afb8d",
+      "bytes": 17929
+    },
+    {
+      "path": "guidelines/brand-avatars.html",
+      "sha256": "dd539b4ffa9e6009d08171c894cfd4e4cd399f61e1f4368aa450102e026d7629",
+      "bytes": 1879
+    },
+    {
+      "path": "guidelines/brand-lockup.html",
+      "sha256": "25bf8523a30ccb697a4b43eaef384fd2e40bcecf3ba5541d45da4ca80fe50e42",
+      "bytes": 2164
+    },
+    {
+      "path": "guidelines/brand-mark.html",
+      "sha256": "d476600d7da4e338f97e8db7c470d40901cef9451b97f30c1f42d2aedefcbb6e",
+      "bytes": 2124
+    },
+    {
+      "path": "guidelines/colors-borders.html",
+      "sha256": "5e5181d431bbc50e94c80b401c1d31e3a914cdcb40826c0ec37a2398637004ee",
+      "bytes": 1614
+    },
+    {
+      "path": "guidelines/colors-core.html",
+      "sha256": "b5a2f3eceec51e158f651d6785f18d9101cd1bdf5f8ee9cf4abb0b5c26bda28b",
+      "bytes": 1527
+    },
+    {
+      "path": "guidelines/colors-signal.html",
+      "sha256": "41edffbc8b30c3f100a4a11e12dcaf5d52d4322bbf117172e28fdac2099ba1c1",
+      "bytes": 2360
+    },
+    {
+      "path": "guidelines/colors-text.html",
+      "sha256": "1ffa020eeea4aa5bfc6f1be27b5d198d2d44367f8a887910e5daf74475e36349",
+      "bytes": 2356
+    },
+    {
+      "path": "guidelines/radius-shadow.html",
+      "sha256": "f47e550c0d2cec4913df05417157d062b8411a3088f4e989b814fc6b95c5df56",
+      "bytes": 1651
+    },
+    {
+      "path": "guidelines/spacing-scale.html",
+      "sha256": "d893b3589fd091aeb624d14922a5087fd3d90c7d56d37038f45529c3e30bfc14",
+      "bytes": 1706
+    },
+    {
+      "path": "guidelines/type-display.html",
+      "sha256": "07d9e60f74a574525d33a83fbc4cf28d7ecfd9f5f2dd01ff61df36c17fe71ad9",
+      "bytes": 1468
+    },
+    {
+      "path": "guidelines/type-korean.html",
+      "sha256": "33a361b6c4da4e75f2254c3d2bd0bf3a4c4f6a118342e10cb439b8d1b578b677",
+      "bytes": 1418
+    },
+    {
+      "path": "guidelines/type-mono.html",
+      "sha256": "0ea53a62ce040159815e159f66bb194b26943114b42254c8b861d00f86841b96",
+      "bytes": 1586
+    },
+    {
+      "path": "guidelines/type-scale.html",
+      "sha256": "7a3ee6f4ff7655299d6ec72e105c054556d7d2898d73cae373d0f2e4831dea30",
+      "bytes": 1972
+    },
+    {
+      "path": "image-slot.js",
+      "sha256": "9309434cb09c357def2c583652d335eb7dedfb5295c9ad66e7d4e75a796dc5f3",
+      "bytes": 31364
+    },
+    {
+      "path": "logo/moment-avatar-ink.png",
+      "sha256": "5fae8cca732f28d516fc3592f352b387c06c71cd5b639a500a7597fd115504d9",
+      "bytes": 52852
+    },
+    {
+      "path": "logo/moment-avatar-paper.png",
+      "sha256": "c8cdc4036c4d01494d3677153d9008a1927ed02a65f75b29b211d737eeccadc1",
+      "bytes": 51951
+    },
+    {
+      "path": "logo/moment-mark-white.png",
+      "sha256": "e2b7d067b4fd0ebb14195354ce9f9ca5a3f003f200b7bae6ddfa7586abb5a9bc",
+      "bytes": 51573
+    },
+    {
+      "path": "logo/moment-mark.png",
+      "sha256": "114732a21048762b7a7009923c82fd9f7e7054cb7dc7e1001f217e0be3262430",
+      "bytes": 49686
+    },
+    {
+      "path": "readme.md",
+      "sha256": "11dbdbd1e2ce3543524a2fd0a8375decb788d79e2f5d529756d213f16234940c",
+      "bytes": 8376
+    },
+    {
+      "path": "styles.css",
+      "sha256": "8371621e238e3d37ca6637fd17ae21cc502c973316ef7f551e53072ca5352dfd",
+      "bytes": 254
+    },
+    {
+      "path": "support.js",
+      "sha256": "7c923c3f6027e809dcca3e6b4ae7b6d5bd45576d76894a257eb4607b49bea005",
+      "bytes": 58047
+    },
+    {
+      "path": "tokens/colors.css",
+      "sha256": "3cefc93fd9ae7a9d61ed25cca10f2c32a230762c239cfc035bbcaceb2e23d367",
+      "bytes": 3015
+    },
+    {
+      "path": "tokens/fonts.css",
+      "sha256": "afe7e26397dd102e4c878600d0853a92de3a4dc09cb7838550d8a752e2b34beb",
+      "bytes": 571
+    },
+    {
+      "path": "tokens/spacing.css",
+      "sha256": "9daff851d69822b65ace811fbb0c8097b9f0127cfd726be912de3b6f8df157b2",
+      "bytes": 1612
+    },
+    {
+      "path": "tokens/typography.css",
+      "sha256": "49b1475e3a522c9ad12d08f42c3a6f341ffa3ff6e7bf26d96e6330bb3baca357",
+      "bytes": 2335
+    },
+    {
+      "path": "uploads/pasted-1782400645199-0.png",
+      "sha256": "374f104dabe84af8d48e7fbb7ce1bfaa88116e4296dcfd730403a052dd7e6c14",
+      "bytes": 2821084
+    },
+    {
+      "path": "uploads/pasted-1782400649952-0.png",
+      "sha256": "2602d9c7701fbb1a13e538ec98a4f44ca92e28257506081782738ca0f423f26b",
+      "bytes": 495181
+    },
+    {
+      "path": "uploads/pasted-1782400654229-0.png",
+      "sha256": "b4de3fcbd4a66705d7fa49bbee4ecc1bb5be88906e781419b9b2874364d3866c",
+      "bytes": 938624
+    },
+    {
+      "path": "uploads/pasted-1782430010335-0.png",
+      "sha256": "7470be536f8d42d70f727481c6289a9b6edbe886f3fa948a6a3ebad540b7124c",
+      "bytes": 911449
+    },
+    {
+      "path": "uploads/pasted-1782430015703-0.png",
+      "sha256": "77745626652fa2caea2b1c8d373214b378ed8b4b78494dbebe5e243e3a360f77",
+      "bytes": 302447
+    },
+    {
+      "path": "uploads/pasted-1782430019758-0.png",
+      "sha256": "00d03b49d61e8049484b19e8a6f7a6c20ebc354ddd2383ac611c6a70822a3d86",
+      "bytes": 294512
+    },
+    {
+      "path": "uploads/pasted-1782430038229-0.png",
+      "sha256": "4b4d6894ae8fcce22630fe7e018d3b3afc23af27e3f72c5422d08b55908bce26",
+      "bytes": 331208
+    }
+  ]
+}

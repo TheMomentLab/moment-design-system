@@ -1,0 +1,645 @@
+{
+  "$schema": "../references/adoption/LDS_UI_ADOPTION_REPORT.schema.json",
+  "schemaVersion": 1,
+  "kind": "lds-ui-adoption-report",
+  "contractVersion": "2",
+  "id": "moment-lab-ds-fork",
+  "scope": {
+    "mode": "full-surface",
+    "paths": [
+      "packages/moment",
+      ".storybook-moment"
+    ]
+  },
+  "surfaces": [
+    {
+      "id": "moment-specimens",
+      "paths": [
+        "packages/moment",
+        ".storybook-moment"
+      ],
+      "facets": {
+        "tokensAndTheme": {
+          "verdict": "reviewed",
+          "detail": "Install the complete LDS runtime and map visual values to the owned semantic and component token layers. Reviewed for Moment Lab fork.",
+          "evidence": [
+            {
+              "kind": "token",
+              "ref": "packages/moment/tokens/theme.css"
+            },
+            {
+              "kind": "check",
+              "ref": "scripts/check-moment.mjs"
+            }
+          ],
+          "decisions": [
+            {
+              "decisionId": "owner-package-css-order",
+              "outcome": "Moment styles.css imports inherited Core geometry and theme defaults before Moment semantic and component mappings; no separate LDS provider is required.",
+              "evidence": [
+                {
+                  "kind": "token",
+                  "ref": "packages/moment/tokens/theme.css"
+                },
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment.mjs"
+                }
+              ]
+            },
+            {
+              "decisionId": "font-theme-scope",
+              "outcome": "All three font families are self-hosted with licenses. Root/section data-theme creates the provider boundary.",
+              "evidence": [
+                {
+                  "kind": "token",
+                  "ref": "packages/moment/tokens/theme.css"
+                },
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment.mjs"
+                }
+              ]
+            },
+            {
+              "decisionId": "color-scheme-behavior",
+              "outcome": "Light, dark, auto and nested explicit theme scopes are provided and tested, including system dark.",
+              "evidence": [
+                {
+                  "kind": "token",
+                  "ref": "packages/moment/tokens/theme.css"
+                },
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment.mjs"
+                }
+              ]
+            },
+            {
+              "decisionId": "token-mapping",
+              "outcome": "135 Core semantic requirements have declarations. Exact brand OKLCH is preserved, readable action/text roles are separate.",
+              "evidence": [
+                {
+                  "kind": "token",
+                  "ref": "packages/moment/tokens/theme.css"
+                },
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment.mjs"
+                }
+              ]
+            },
+            {
+              "decisionId": "raw-visual-literals",
+              "outcome": "Theme values are owned by the Moment generator and reference token files; geometry follows ZIP scales or inherited Core anatomy.",
+              "evidence": [
+                {
+                  "kind": "token",
+                  "ref": "packages/moment/tokens/theme.css"
+                },
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment.mjs"
+                }
+              ]
+            }
+          ]
+        },
+        "layoutAndVisualFoundations": {
+          "verdict": "reviewed",
+          "detail": "Preserve information hierarchy across real content, narrow viewports, overflow, and the LDS visual foundation scales. Reviewed for Moment Lab fork.",
+          "evidence": [
+            {
+              "kind": "source",
+              "ref": "packages/moment/tokens/components.css"
+            },
+            {
+              "kind": "visual",
+              "ref": "docs/moment/verification.json"
+            }
+          ],
+          "decisions": [
+            {
+              "decisionId": "semantic-reading-order",
+              "outcome": "Card DOM order is category, title, summary, source. Links are inside a non-interactive article.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/tokens/components.css"
+                },
+                {
+                  "kind": "visual",
+                  "ref": "docs/moment/verification.json"
+                }
+              ]
+            },
+            {
+              "decisionId": "grid-container-mapping",
+              "outcome": "Specimens use a two-column grid collapsing to one at 720px; reusable cards fill their consumer-owned parent.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/tokens/components.css"
+                },
+                {
+                  "kind": "visual",
+                  "ref": "docs/moment/verification.json"
+                }
+              ]
+            },
+            {
+              "decisionId": "responsive-overflow-ownership",
+              "outcome": "Long Korean headings and long origin labels wrap. 1280px and 390px specimens have no horizontal document overflow.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/tokens/components.css"
+                },
+                {
+                  "kind": "visual",
+                  "ref": "docs/moment/verification.json"
+                }
+              ]
+            },
+            {
+              "decisionId": "typography-data-formatting",
+              "outcome": "Pretendard body, Space Grotesk Latin display, JetBrains Mono metadata. No live dates or numerical news claims are generated.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/tokens/components.css"
+                },
+                {
+                  "kind": "visual",
+                  "ref": "docs/moment/verification.json"
+                }
+              ]
+            },
+            {
+              "decisionId": "visual-foundation-mapping",
+              "outcome": "4px spacing base, 12px cards, pill actions, flat dark/light backgrounds. Photography and publishing frame aspect ratios stay consumer-owned.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/tokens/components.css"
+                },
+                {
+                  "kind": "visual",
+                  "ref": "docs/moment/verification.json"
+                }
+              ]
+            }
+          ]
+        },
+        "statePatternsAndMotion": {
+          "verdict": "reviewed",
+          "detail": "Model asynchronous and interaction states explicitly and select feedback and motion patterns by scope and duration. Reviewed for Moment Lab fork.",
+          "evidence": [
+            {
+              "kind": "source",
+              "ref": "packages/core/src/components/buttons/Button.jsx"
+            },
+            {
+              "kind": "story",
+              "ref": "packages/moment/stories/Controls.stories.jsx"
+            }
+          ],
+          "decisions": [
+            {
+              "decisionId": "async-state-model",
+              "outcome": "Ready, loading, disabled, error and recovery are shown using Core controls. Feed empty/stale/offline states are consumer-owned; DS performs no fetching.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/core/src/components/buttons/Button.jsx"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "loading-pattern-scope",
+              "outcome": "Inherited Button loading applies to one action; does not cover or remove the page.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/core/src/components/buttons/Button.jsx"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "retained-content-refresh",
+              "outcome": "Inline loading preserves visible label and focus; no feed refresh logic belongs to this package.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/core/src/components/buttons/Button.jsx"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "motion-reduced-motion",
+              "outcome": "No entrance animation or positional hover lift is added. Reduced-motion media rule neutralizes animation and transition durations.",
+              "evidence": [
+                {
+                  "kind": "source",
+                  "ref": "packages/core/src/components/buttons/Button.jsx"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        "assetsIconographyAndBrand": {
+          "verdict": "reviewed",
+          "detail": "Reuse owned registries and preserve provenance, semantic meaning, accessibility, and brand boundaries for every visual asset. Reviewed for Moment Lab fork.",
+          "evidence": [
+            {
+              "kind": "asset",
+              "ref": "packages/moment/assets/moment-mark.svg"
+            },
+            {
+              "kind": "source",
+              "ref": "packages/moment/src/MomentMark.jsx"
+            }
+          ],
+          "decisions": [
+            {
+              "decisionId": "registry-search",
+              "outcome": "Core SourceTag, Overline, Chip, Button and Card were inspected before implementing Moment wrappers.",
+              "evidence": [
+                {
+                  "kind": "asset",
+                  "ref": "packages/moment/assets/moment-mark.svg"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/MomentMark.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "asset-owner-public-path",
+              "outcome": "Moment owns assets/moment-mark.svg and adjacent PNGs/fonts, exposed through the package assets export.",
+              "evidence": [
+                {
+                  "kind": "asset",
+                  "ref": "packages/moment/assets/moment-mark.svg"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/MomentMark.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "provenance-license",
+              "outcome": "ZIP hashes, LDS SHA, third-party notice and individual OFL font license files accompany the fork.",
+              "evidence": [
+                {
+                  "kind": "asset",
+                  "ref": "packages/moment/assets/moment-mark.svg"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/MomentMark.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "asset-semantics-alt",
+              "outcome": "Standalone SVG is a named image. The adjacent wordmark supplies identity when the SVG is decorative.",
+              "evidence": [
+                {
+                  "kind": "asset",
+                  "ref": "packages/moment/assets/moment-mark.svg"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/MomentMark.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "theme-suitability",
+              "outcome": "Single-color Moment mark and paper/ink text are rendered on light/dark backgrounds at 16, 24, 44 and 100px.",
+              "evidence": [
+                {
+                  "kind": "asset",
+                  "ref": "packages/moment/assets/moment-mark.svg"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/MomentMark.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        "contentAndInternationalization": {
+          "verdict": "reviewed",
+          "detail": "Keep product meaning, voice, locale boundaries, and user-visible data formatting explicit and reviewable. Reviewed for Moment Lab fork.",
+          "evidence": [
+            {
+              "kind": "copy-catalog",
+              "ref": "packages/moment/stories/Editorial.stories.jsx"
+            },
+            {
+              "kind": "source",
+              "ref": "packages/moment/src/editorial.jsx"
+            }
+          ],
+          "decisions": [
+            {
+              "decisionId": "copy-product-truth",
+              "outcome": "No example is presented as live news. Editorial samples visibly identify themselves as templates.",
+              "evidence": [
+                {
+                  "kind": "copy-catalog",
+                  "ref": "packages/moment/stories/Editorial.stories.jsx"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/editorial.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "writing-voice",
+              "outcome": "Korean concise factual copy; avoid hype and preserve an explicit original-source attribution.",
+              "evidence": [
+                {
+                  "kind": "copy-catalog",
+                  "ref": "packages/moment/stories/Editorial.stories.jsx"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/editorial.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "locale-language-boundary",
+              "outcome": "Preview document language is ko. English metadata has lang=en; Korean translation uses lang=ko.",
+              "evidence": [
+                {
+                  "kind": "copy-catalog",
+                  "ref": "packages/moment/stories/Editorial.stories.jsx"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/editorial.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "data-formatting",
+              "outcome": "No dates, prices, metrics or locale-sensitive live data are added by the DS; consumers own formatting.",
+              "evidence": [
+                {
+                  "kind": "copy-catalog",
+                  "ref": "packages/moment/stories/Editorial.stories.jsx"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/editorial.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "translation-truncation",
+              "outcome": "Korean text wraps by words with an overflow escape; long origin names remain visible instead of truncating.",
+              "evidence": [
+                {
+                  "kind": "copy-catalog",
+                  "ref": "packages/moment/stories/Editorial.stories.jsx"
+                },
+                {
+                  "kind": "source",
+                  "ref": "packages/moment/src/editorial.jsx"
+                }
+              ]
+            }
+          ]
+        },
+        "accessibility": {
+          "verdict": "reviewed",
+          "detail": "Verify semantic structure, keyboard and focus behavior, perceivable state, target size, contrast, and inclusive use. Reviewed for Moment Lab fork.",
+          "evidence": [
+            {
+              "kind": "check",
+              "ref": "scripts/check-moment-browser.mjs"
+            },
+            {
+              "kind": "story",
+              "ref": "packages/moment/stories/Controls.stories.jsx"
+            }
+          ],
+          "decisions": [
+            {
+              "decisionId": "landmarks-dom-order",
+              "outcome": "Preview has main/header/section structure and article cards with configurable h2/h3/h4 headings.",
+              "evidence": [
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment-browser.mjs"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "keyboard-focus-restoration",
+              "outcome": "Core Button Enter/Space activation and loading focus retention are verified; no new overlay or focus trap is authored.",
+              "evidence": [
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment-browser.mjs"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "accessible-name-role-state",
+              "outcome": "Buttons expose busy/disabled state; filters expose aria-pressed; source anchors include a new-tab hint.",
+              "evidence": [
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment-browser.mjs"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "target-pointer-alternatives",
+              "outcome": "Default actions are 44px; compact controls retain Core sizes >=24px; keyboard activation does not require a pointer.",
+              "evidence": [
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment-browser.mjs"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "contrast-non-color-cues",
+              "outcome": "All 56 rendered cases pass automated WCAG A/AA checks, including text contrast; filters expose pressed state independently of color.",
+              "evidence": [
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment-browser.mjs"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            },
+            {
+              "decisionId": "reduced-motion",
+              "outcome": "Reduced-motion media setting is exercised; no meaning depends on animation.",
+              "evidence": [
+                {
+                  "kind": "check",
+                  "ref": "scripts/check-moment-browser.mjs"
+                },
+                {
+                  "kind": "story",
+                  "ref": "packages/moment/stories/Controls.stories.jsx"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "componentMapping": {
+        "verdict": "reviewed",
+        "detail": "Reuse unchanged LDS Core and isolate Moment theme/editorial ownership.",
+        "evidence": [
+          {
+            "kind": "source",
+            "ref": "packages/moment/src/index.jsx"
+          },
+          {
+            "kind": "source",
+            "ref": "packages/moment/src/editorial.jsx"
+          }
+        ],
+        "decisions": [
+          {
+            "decisionId": "owner-public-export",
+            "outcome": "Standalone Moment ESM and declaration entry points expose the composed Moment components plus unchanged Core API.",
+            "evidence": [
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/index.jsx"
+              },
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/editorial.jsx"
+              }
+            ]
+          },
+          {
+            "decisionId": "reuse-composition-choice",
+            "outcome": "Button is unchanged Core, Tag aliases Chip, MonoLabel composes Overline, SourceTag composes Core SourceTag, EditorialCard composes Card.",
+            "evidence": [
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/index.jsx"
+              },
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/editorial.jsx"
+              }
+            ]
+          },
+          {
+            "decisionId": "product-orchestration-boundary",
+            "outcome": "Consumers own news validation, fetching, publishing, subscriptions and saved-article persistence.",
+            "evidence": [
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/index.jsx"
+              },
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/editorial.jsx"
+              }
+            ]
+          },
+          {
+            "decisionId": "exception-shared-authoring",
+            "outcome": "The user explicitly requested this brand fork. Moment theme changes are isolated from upstream Core and LK Theme.",
+            "evidence": [
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/index.jsx"
+              },
+              {
+                "kind": "source",
+                "ref": "packages/moment/src/editorial.jsx"
+              }
+            ]
+          }
+        ]
+      },
+      "verification": {
+        "viewports": [
+          "1280x960",
+          "390x960"
+        ],
+        "viewportDisposition": "Every Storybook specimen checked at desktop and narrow widths.",
+        "themes": [
+          "light",
+          "dark",
+          "auto"
+        ],
+        "themeDisposition": "Light and dark per story; auto system dark and nested themes checked.",
+        "states": [
+          "ready",
+          "loading",
+          "disabled",
+          "error",
+          "recovery"
+        ],
+        "stateDisposition": "Controls cover local interaction states; network state belongs to consumers.",
+        "evidence": [
+          {
+            "kind": "check",
+            "ref": "scripts/check-moment-browser.mjs"
+          },
+          {
+            "kind": "visual",
+            "ref": "docs/moment/verification.json"
+          }
+        ]
+      }
+    }
+  ],
+  "exceptions": []
+}

@@ -1,0 +1,4 @@
+import React from 'react';
+import { Header } from './shared.jsx';
+export default { title:'MDS/Foundation/Typography' };
+export const Families={name:'세 가지 서체',render:()=> <div><Header title="Typography">각 서체가 맡은 일이 다릅니다. 큰 제목, 세부 정보, 그리고 한국어 본문.</Header>{[['Space Grotesk','--ml-font-display','Moment Lab','영문 디스플레이 · 워드마크'],['JetBrains Mono','--ml-font-mono','COLLECT · DISTILL · CITE','출처 · 날짜 · 메타데이터'],['Pretendard','--ml-font-body','로봇과 Physical AI 소식을 전합니다','한국어 제목 · 본문']].map(([name,font,sample,role])=><section className="ml-type-row" key={font}><h3>{name}</h3><strong style={{fontFamily:`var(${font})`,fontSize:font.includes('mono')?'clamp(16px, 2.8vw, 32px)':undefined}}>{sample}</strong><div className="ml-token-name">{role}</div></section>)}<p>본문은 15px / 1.85, 카드 제목은 Pretendard 800을 기준으로 합니다. 한글은 단어 단위로 줄바꿈하며, 긴 출처명도 생략하지 않습니다.</p></div>};

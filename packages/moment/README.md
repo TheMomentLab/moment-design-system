@@ -4,8 +4,6 @@
 
 COLLECT · DISTILL · CITE
 
-![Moment Lab 브랜드 예시](docs/moment/preview.png)
-
 - 아이스 블루, Paper/Ink, 다크·라이트·시스템 테마
 - Space Grotesk / JetBrains Mono / Pretendard — 폰트 자체 포함
 - LDS Core 재사용 + MomentMark, Lockup, MonoLabel, SourceTag, EditorialCard
@@ -66,27 +64,6 @@ export function Article() {
 
 `data-theme="light | dark | auto"`를 루트 또는 영역에 적용합니다. 미지정 루트는 시스템 테마를 따릅니다. 출처의 `href`가 있으면 새 탭 링크, 없으면 텍스트로 렌더링합니다. 소비 앱이 콘텐츠 검증·네트워크·게시·구독 저장을 소유합니다.
 
-## 구조와 포크 관리
+## 소스와 고지
 
-| 경로 | 역할 |
-| --- | --- |
-| `packages/moment` | 독립 배포 패키지, 브랜드 토큰과 에디토리얼 컴포넌트 |
-| `packages/core` | 계승한 LDS Core 소스; Moment 빌드에 포함 |
-| `.storybook-moment` | 모먼트랩 Storybook 설정 |
-| `docs/moment` | 브랜드 근거, 포크 결정, 검증 기록 |
-| 기존 `packages/theme`, `packages/product`, `docs` | LDS upstream 유지보수·참고 자료 |
-| `.github/workflows-upstream` | 원본 LK 릴리스·배포 워크플로 보관본(비활성) |
-
-Upstream: [LK-Design-System/lk-design-system](https://github.com/LK-Design-System/lk-design-system), `0.2.2` / `6e037c2a90af28f57139083c16d8cd514940a12a`.
-
-Moment CSS는 Core가 요구하는 semantic token을 완전히 제공합니다. 배포 번들에는 Core가 포함되므로 별도 LK 전용 패키지나 인증이 필요 없습니다. `--ml-*` 브랜드 토큰과 LDS semantic/component 토큰 사이의 매핑은 `scripts/generate-moment-theme.py`에서 관리합니다. 원본 Core 업데이트는 upstream의 변경을 검토한 뒤 통합하고 Moment 검사를 재실행합니다. 원본 LDS 패키지 생성 명령은 `upstream:*` 또는 기존 명령으로 남아 있습니다.
-
-- [브랜드 원문](docs/moment/brand-reference.md) — ZIP의 원본 README, 현재 구현과 차이는 아래 결정 문서 참고
-- [설계·소유 경계와 비교 근거](docs/moment/implementation.md)
-- [입력 파일 해시](docs/moment/source-inventory.json)
-- [브라우저 검증 결과](docs/moment/verification.json)
-- [비컴포넌트 적용 검토](docs/moment/adoption-report.json)
-
-## 출처와 고지
-
-Moment Lab DS → LDS → **[Montage by Wantedlab](https://montage.wanted.co.kr/)** (MIT) 계보를 보존합니다. 변경: Moment 브랜드 테마, 에디토리얼 조합, 독립 패키지와 문서. Wantedlab 또는 LK의 공식 Moment 제품으로 표시하지 않습니다. 브랜드 자산의 권리와 소프트웨어 사용 조건은 구분됩니다. [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)와 패키지의 폰트 라이선스를 함께 보존하세요.
+소스, 설계 결정과 검증은 https://github.com/TheMomentLab/moment-design-system 에서 확인합니다. React 18 또는 19와 React DOM이 필요합니다. LDS Core는 번들에 포함됩니다. THIRD_PARTY_NOTICES.md와 assets/fonts의 라이선스를 함께 보존하세요.

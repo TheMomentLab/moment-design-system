@@ -1,5 +1,10 @@
 # Repository Working Rules
 
+## Moment Lab fork scope
+
+This repository is TheMomentLab/moment-design-system, forked from LDS. The current product entry point is `packages/moment`, with `.storybook-moment` and `docs/moment`. For this explicitly requested brand fork, Moment brand values and editorial decisions in `docs/moment/implementation.md` govern the new layer. Existing LDS Core files and behavior remain upstream-owned; do not change them to fix a Moment-only concern. Validate Moment changes with `npm run build`, `npm run check`, `npm run build:storybook`, and `npm run check:moment:browser`. The original LDS-wide release scripts and archived workflows are upstream maintenance tools, not Moment release requirements. Keep the `main` branch and upstream history; never push to the upstream repository.
+
+
 ## Concurrent Agent Coordination
 
 - Assume that other agents may be inspecting, generating, or editing files in the same worktree at the same time, even when their activity is not visible in the current task.

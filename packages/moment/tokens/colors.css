@@ -1,0 +1,61 @@
+/* ============================================================
+   Moment Lab — Color tokens v2
+   Ice Blue system: monochrome foundation + electric blue brand.
+   Dual-surface: dark #07101A / light #EDF5FB.
+   ============================================================ */
+:root {
+  /* — Brand ——————————————————————————————— */
+  --ml-brand:        oklch(0.60 0.18 208);   /* ice blue — primary accent */
+  --ml-brand-light:  oklch(0.76 0.13 208);   /* soft tint for hover / badge */
+  --ml-brand-dark:   oklch(0.44 0.16 208);   /* deep for press states */
+  --ml-brand-on:     #FBFBFA;                /* text / icon on brand fill */
+
+  /* — Core ——————————————————————————————— */
+  --ml-ink:          #141414;   /* primary fg, dark surfaces, the mark */
+  --ml-paper:        #FBFBFA;   /* primary light surface / on-ink text */
+  --ml-canvas:       #EDF5FB;   /* cool light backdrop */
+  --ml-canvas-warm:  #ECEBE7;   /* warm neutral (legacy / print) */
+  --ml-graphite:     #8C8A87;   /* secondary label, dividers-on-dark */
+
+  /* — Dark mode surfaces ——————————————————— */
+  --ml-dark-bg:       #07101A;   /* primary dark background */
+  --ml-dark-surface:  #0D1825;   /* card / panel on dark bg */
+  --ml-dark-elevated: #132030;   /* raised / hover element */
+
+  /* — Text ramp (on light) ————————————————— */
+  --ml-text:           #141414;
+  --ml-text-strong:    #2F2D2A;
+  --ml-text-body:      #3F3D3A;
+  --ml-text-muted:     #56534E;
+  --ml-text-soft:      #6F6C67;
+  --ml-text-faint:     #A4A09A;
+  --ml-text-faintest:  #B6B1AA;
+
+  /* — On-dark text ————————————————————————— */
+  --ml-on-dark:         #FBFBFA;
+  --ml-on-dark-muted:   rgba(251,251,250,0.60);
+  --ml-on-dark-soft:    rgba(251,251,250,0.36);
+  --ml-on-dark-faint:   rgba(251,251,250,0.18);
+
+  /* — Borders / hairlines —————————————————— */
+  --ml-border:         #E7E4E0;
+  --ml-border-strong:  #CFCBC4;
+  --ml-border-soft:    #E8E6E3;
+  --ml-divider:        #F0EEE9;
+  --ml-fill-line:      #EDEDEA;
+  --ml-border-dark:    rgba(255,255,255,0.08);
+
+  /* — Status ——————————————————————————————— */
+  --ml-status:         #1F8A5B;   /* green dot — live / update cadence */
+  --ml-status-on:      #FBFBFA;
+
+  /* — Semantic aliases ————————————————————— */
+  --ml-bg:             var(--ml-canvas);
+  --ml-surface:        var(--ml-paper);
+  --ml-surface-card:   #FFFFFF;
+  --ml-surface-dark:   var(--ml-dark-bg);
+  --ml-fg:             var(--ml-ink);
+  --ml-fg-on-dark:     var(--ml-on-dark);
+  --ml-accent:         var(--ml-brand);
+  --ml-signal:         var(--ml-brand);   /* back-compat alias — lime retired, now ice blue */
+}
