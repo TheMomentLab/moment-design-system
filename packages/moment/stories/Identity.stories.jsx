@@ -1,7 +1,7 @@
 import React from 'react';
 import { MomentLockup, MomentMark, MonoLabel } from '../src/index.jsx';
 import { Header } from './shared.jsx';
-export default { title: 'MDS/Foundation/Identity', parameters: { docs: { description: { component: 'Moment Lab은 1인 로봇 소프트웨어 연구소입니다. MDS는 연구 도구, 제품, 운영 화면과 연구 기록을 위한 LDS 전체 계승 디자인 시스템입니다.' } } } };
+export default { id: 'mds-foundation-identity',  title: 'MDS Theme/Brand/Moment Lab/Identity', parameters: { docs: { description: { component: 'Moment Lab은 1인 로봇 소프트웨어 연구소입니다. MDS는 연구 도구, 제품, 운영 화면과 연구 기록을 위한 LDS 전체 계승 디자인 시스템입니다.' } } } };
 export const Identity = { name: '모먼트랩', render: () => <div>
   <Header title="Moment Lab">1인 로봇 소프트웨어 연구소. 연구에서 구현까지 이어지는 디자인 시스템.</Header>
   <section className="ml-identity-hero" data-theme="dark">

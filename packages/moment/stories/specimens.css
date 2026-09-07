@@ -1,6 +1,6 @@
-.ml-specimen { padding: clamp(24px, 5vw, 64px); min-height: 100vh; background: var(--ml-bg); color: var(--ml-fg); }
+.ml-specimen { padding: clamp(16px, 5vw, 32px); min-height: 100vh; background: var(--color-semantic-background-normal-normal); color: var(--color-semantic-label-normal); }
 .ml-specimen > * { max-width: var(--ml-content-max); margin-inline: auto; }
-.ml-specimen h1 { font: 600 clamp(32px, 5vw, 56px)/1.15 var(--ml-font-display); letter-spacing: -.035em; }
+.ml-specimen h1 { font: var(--fw-bold) var(--fs-h1)/var(--lh-h1) var(--font-sans); letter-spacing: var(--ls-h1); }
 .ml-specimen h2 { font-size: 22px; margin-block: 32px 16px; }
 .ml-specimen h3:not(.ml-editorial-card__title) { font-size: 17px; }
 .ml-specimen p { max-width: 64ch; color: var(--ml-muted); }

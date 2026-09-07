@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-07T14:34:34.803Z",
+  "date": "2026-09-07T15:04:28.361Z",
   "stories": 14,
   "renderedCases": 56,
   "viewports": [
@@ -18,13 +18,6 @@
   "errors": [],
   "results": [
     {
-      "story": "mds-foundation-color--palette",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
       "story": "mds-foundation-color--surfaces",
       "width": 1280,
       "theme": "light",
@@ -32,56 +25,14 @@
       "violations": []
     },
     {
-      "story": "mds-core-controls--buttons",
+      "story": "mds-foundation-color--palette",
       "width": 1280,
       "theme": "light",
       "overflow": false,
       "violations": []
     },
     {
-      "story": "mds-core-controls--chips",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-core-controls--fields",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-core-controls--interaction",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--cards",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--long-content",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--citation",
-      "width": 1280,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--identity",
+      "story": "mds-foundation-identity--lockups",
       "width": 1280,
       "theme": "light",
       "overflow": false,
@@ -95,7 +46,7 @@
       "violations": []
     },
     {
-      "story": "mds-foundation-identity--lockups",
+      "story": "mds-foundation-identity--identity",
       "width": 1280,
       "theme": "light",
       "overflow": false,
@@ -116,9 +67,51 @@
       "violations": []
     },
     {
-      "story": "mds-foundation-color--palette",
+      "story": "mds-core-controls--buttons",
       "width": 1280,
-      "theme": "dark",
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--fields",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--interaction",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--chips",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--long-content",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--cards",
+      "width": 1280,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--citation",
+      "width": 1280,
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
@@ -130,56 +123,14 @@
       "violations": []
     },
     {
-      "story": "mds-core-controls--buttons",
+      "story": "mds-foundation-color--palette",
       "width": 1280,
       "theme": "dark",
       "overflow": false,
       "violations": []
     },
     {
-      "story": "mds-core-controls--chips",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-core-controls--fields",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-core-controls--interaction",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--cards",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--long-content",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--citation",
-      "width": 1280,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--identity",
+      "story": "mds-foundation-identity--lockups",
       "width": 1280,
       "theme": "dark",
       "overflow": false,
@@ -193,7 +144,7 @@
       "violations": []
     },
     {
-      "story": "mds-foundation-identity--lockups",
+      "story": "mds-foundation-identity--identity",
       "width": 1280,
       "theme": "dark",
       "overflow": false,
@@ -214,9 +165,51 @@
       "violations": []
     },
     {
-      "story": "mds-foundation-color--palette",
-      "width": 390,
-      "theme": "light",
+      "story": "mds-core-controls--buttons",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--fields",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--interaction",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--chips",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--long-content",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--cards",
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--citation",
+      "width": 1280,
+      "theme": "dark",
       "overflow": false,
       "violations": []
     },
@@ -228,56 +221,14 @@
       "violations": []
     },
     {
-      "story": "mds-core-controls--buttons",
+      "story": "mds-foundation-color--palette",
       "width": 390,
       "theme": "light",
       "overflow": false,
       "violations": []
     },
     {
-      "story": "mds-core-controls--chips",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-core-controls--fields",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-core-controls--interaction",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--cards",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--long-content",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-content-editorial--citation",
-      "width": 390,
-      "theme": "light",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--identity",
+      "story": "mds-foundation-identity--lockups",
       "width": 390,
       "theme": "light",
       "overflow": false,
@@ -291,7 +242,7 @@
       "violations": []
     },
     {
-      "story": "mds-foundation-identity--lockups",
+      "story": "mds-foundation-identity--identity",
       "width": 390,
       "theme": "light",
       "overflow": false,
@@ -312,9 +263,51 @@
       "violations": []
     },
     {
-      "story": "mds-foundation-color--palette",
+      "story": "mds-core-controls--buttons",
       "width": 390,
-      "theme": "dark",
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--fields",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--interaction",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--chips",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--long-content",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--cards",
+      "width": 390,
+      "theme": "light",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-content-editorial--citation",
+      "width": 390,
+      "theme": "light",
       "overflow": false,
       "violations": []
     },
@@ -326,14 +319,49 @@
       "violations": []
     },
     {
-      "story": "mds-core-controls--buttons",
+      "story": "mds-foundation-color--palette",
       "width": 390,
       "theme": "dark",
       "overflow": false,
       "violations": []
     },
     {
-      "story": "mds-core-controls--chips",
+      "story": "mds-foundation-identity--lockups",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-identity--marks",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-identity--identity",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-spacing--scale",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-foundation-typography--families",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
+      "story": "mds-core-controls--buttons",
       "width": 390,
       "theme": "dark",
       "overflow": false,
@@ -354,7 +382,7 @@
       "violations": []
     },
     {
-      "story": "mds-content-editorial--cards",
+      "story": "mds-core-controls--chips",
       "width": 390,
       "theme": "dark",
       "overflow": false,
@@ -368,42 +396,14 @@
       "violations": []
     },
     {
+      "story": "mds-content-editorial--cards",
+      "width": 390,
+      "theme": "dark",
+      "overflow": false,
+      "violations": []
+    },
+    {
       "story": "mds-content-editorial--citation",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--identity",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--marks",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-identity--lockups",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-spacing--scale",
-      "width": 390,
-      "theme": "dark",
-      "overflow": false,
-      "violations": []
-    },
-    {
-      "story": "mds-foundation-typography--families",
       "width": 390,
       "theme": "dark",
       "overflow": false,

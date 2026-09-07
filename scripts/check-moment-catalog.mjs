@@ -13,6 +13,19 @@ for(const entry of baseline.stories){
  assert.equal(actual.type,entry.type,`Changed story/docs kind: ${entry.id}`);
  assert.equal(actual.title,entry.title.replace(/^LDS/,'MDS'),`Wrong catalog group: ${entry.id}`);
 }
+const inheritedIds = new Set(baseline.stories.map(entry => entry.id));
+assert.deepEqual(Object.values(index.entries).filter(entry => inheritedIds.has(entry.id)).map(entry => entry.id), baseline.stories.map(entry => entry.id), 'Inherited sidebar order must match LDS, including Docs and variants');
+const expectedMomentGroups = {
+ 'mds-foundation-identity': 'MDS Theme/Brand/Moment Lab/Identity',
+ 'mds-foundation-color': 'MDS Theme/Brand/Moment Lab/Color',
+ 'mds-foundation-typography': 'MDS Theme/Brand/Moment Lab/Typography',
+ 'mds-foundation-spacing': 'MDS Theme/Brand/Moment Lab/Spacing',
+ 'mds-core-controls': 'MDS Theme/Controls/Moment Controls',
+ 'mds-content-editorial': 'MDS Product/Content/Editorial Card',
+};
+for (const entry of Object.values(index.entries).filter(entry => entry.id.startsWith('mds-'))) {
+ assert.equal(entry.title, expectedMomentGroups[entry.id.split('--')[0]], 'Moment additions must use the inherited Theme/Product hierarchy');
+}
 for(const file of baseline.sourceFiles){
  assert(existsSync(path.join(root,file.source)),`Missing original file: ${file.source}`);
  const original=read(file.source);

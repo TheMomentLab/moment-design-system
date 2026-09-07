@@ -37,3 +37,9 @@ The ZIP's README is retained verbatim in brand-reference.md as historical eviden
 ## Browser lifecycle adaptation
 
 The generated catalog waits for rendered fonts and two animation frames before invoking each unchanged original play function. This avoids measuring MetricCard footers while a self-hosted font is swapping. SplitButton's generated test also waits two frames after Escape before intentionally focusing the viewport-edge trigger: the inherited useMenuKeyboard schedules focus restoration with requestAnimationFrame. No assertion, timeout, accessibility threshold or component behavior is removed or relaxed; original source files remain unchanged.
+
+## Storybook structure (2026-09-08)
+
+Keep the inherited Directory → Core → Theme → Product hierarchy, foundation/component order and Docs/variant order. Storybook statically extracts storySort from the entry preview file; an imported parameters spread does not provide the indexer with that function. The comparator is therefore inline in .storybook-moment/preview.jsx, with only the MDS/LDS name normalization added. The catalog guard compares all 931 inherited IDs in order, not just their presence.
+
+Moment identity, palette, typography and spacing sit under Theme/Brand/Moment Lab; Moment control specimens under Theme/Controls; Editorial Card under Product/Content. The extra root Foundation/Core/Content branches are removed. Explicit IDs preserve all previous Moment bookmarks. The manager uses the same default Storybook appearance as LDS, with only the Moment title, favicon and repository identity. Moment specimen padding and page-title typography follow the inherited Canvas defaults.

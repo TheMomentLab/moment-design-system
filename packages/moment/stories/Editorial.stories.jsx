@@ -1,7 +1,7 @@
 import React from 'react';
 import { EditorialCard, MomentSourceTag, MonoLabel } from '../src/index.jsx';
 import { Header } from './shared.jsx';
-export default {title:'MDS/Content/Editorial'};
+export default { id: 'mds-content-editorial', title:'MDS Product/Content/Editorial Card'};
 const sample={title:'로봇 기술의 변화, 핵심과 맥락을 함께 읽습니다',summary:'실제 뉴스가 아닌 카드 템플릿 예시입니다. 발표 내용을 간결하게 정리하고, 확인할 수 있는 원문을 함께 제공합니다.',source:{name:'원문 출처 예시'}};
 export const Cards={name:'에디토리얼 카드',render:()=> <div><Header title="Editorial card">연구 기록과 기술 콘텐츠를 위한 확장입니다. 연구소의 전체 도구·제품 UI는 MDS Core와 MDS Product에서 제공합니다.</Header><div className="ml-specimen-grid"><EditorialCard {...sample}/><section data-theme="dark"><EditorialCard {...sample} variant="signal"/></section></div><p>요약은 참고용이며, 정확한 내용은 원문에서 확인하세요.</p></div>};
 export const LongContent={name:'긴 제목과 출처',render:()=> <div><Header title="Content that wraps">한글 제목과 긴 출처명도 작은 화면에서 생략하지 않습니다.</Header><div style={{maxWidth:420}}><EditorialCard {...sample} title="현장에 투입되는 로봇을 이해하기 위해 성능 지표뿐 아니라 운영 조건과 평가 방법까지 함께 살펴봅니다" source={{name:'국내외 로봇·Physical AI 연구기관 공동 기술보고서 편집위원회 — 긴 출처명 예시'}}/></div></div>};
