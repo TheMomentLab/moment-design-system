@@ -1,7 +1,7 @@
 import React from 'react';
 import { MomentLockup, MomentMark, MonoLabel } from '../src/index.jsx';
 import { Header } from './shared.jsx';
-export default { id: 'mds-foundation-identity',  title: 'MDS Theme/Brand/Moment Lab/Identity', parameters: { docs: { description: { component: 'Moment Lab은 1인 로봇 소프트웨어 연구소입니다. MDS는 연구 도구, 제품, 운영 화면과 연구 기록을 위한 LDS 전체 계승 디자인 시스템입니다.' } } } };
+export default { id: 'mds-foundation-identity',  title: 'MDS Theme/Brand/Moment Lab/Identity', parameters: { docs: { description: { component: 'Moment Lab은 1인 로봇 소프트웨어 연구소입니다. MDS는 연구 도구, 제품, 운영 화면과 연구 기록을 위한 통합 디자인 시스템입니다.' } } } };
 export const Identity = { name: '모먼트랩', render: () => <div>
   <Header title="Moment Lab">1인 로봇 소프트웨어 연구소. 연구에서 구현까지 이어지는 디자인 시스템.</Header>
   <section className="ml-identity-hero" data-theme="dark">
@@ -17,4 +17,4 @@ export const Identity = { name: '모먼트랩', render: () => <div>
   </div>
 </div> };
 export const Marks = { name: '마크와 최소 크기', render: () => <div><Header title="Moment mark">회전축, 팔, 질량과 호. 모멘트와 포착된 순간을 담는 하나의 단색 마크.</Header><div className="ml-specimen-grid">{['light','dark'].map(theme=><section key={theme} data-theme={theme} className="ml-specimen-panel"><div className="ml-specimen-row">{[16,24,44,100].map(size=><div key={size}><MomentMark size={size}/><p className="ml-token-name">{size}px</p></div>)}</div></section>)}</div></div> };
-export const Lockups = { name: '락업', render: () => <div><Header title="Moment lockup">연구소의 심볼과 워드마크. LDS의 기존 Lockup API는 그대로 제공하고, 모먼트랩 조합형은 MomentLockup으로 사용합니다.</Header><div className="ml-specimen-grid"><section className="ml-specimen-panel"><MomentLockup/></section><section className="ml-specimen-panel" data-theme="dark"><MomentLockup layout="stacked"/></section></div><h2>작은 조합형</h2><MomentLockup size="sm"/></div> };
+export const Lockups = { name: '락업', render: () => <div><Header title="Moment lockup">연구소의 심볼과 워드마크. SVG 기반 Lockup과 조합형 MomentLockup을 제공합니다.</Header><div className="ml-specimen-grid"><section className="ml-specimen-panel"><MomentLockup/></section><section className="ml-specimen-panel" data-theme="dark"><MomentLockup layout="stacked"/></section></div><h2>작은 조합형</h2><MomentLockup size="sm"/></div> };

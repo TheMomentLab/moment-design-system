@@ -52,3 +52,5 @@ artifacts/moment/
 packages/moment/inherited/
 .mds-catalog/
 scripts/.moment-inherited-*.generated.mjs
+
+.mds-docs/

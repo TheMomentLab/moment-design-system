@@ -5,6 +5,8 @@
 This repository is TheMomentLab/moment-design-system, forked from LDS. Moment Lab is a one-person robotics software research lab. Inherit all LDS Core, Theme, Product and Conformance source, APIs, assets, docs, stories and tooling. When Moment references conflict, prioritize LDS anatomy, geometry, typography scales, states and accessibility; apply the Moment logo/palette within that system. Editorial is optional. See docs/moment/implementation.md. The aggregate lives in packages/moment; preserve upstream source and private API boundaries. Validate with npm run build, npm run check, npm run build:storybook, npm run check:moment:catalog, npm run check:moment:browser and npm run check:moment:inherited-browser. Archived LK release workflows remain upstream reference. Keep main and upstream history; never push upstream.
 
 
+Public MDS Storybook text, documentation, examples, links and brand components describe Moment Lab. Keep LDS attribution in provenance/notices and preserve technical compatibility identifiers; do not expose inherited company branding as MDS product guidance.
+
 ## Concurrent Agent Coordination
 
 - Assume that other agents may be inspecting, generating, or editing files in the same worktree at the same time, even when their activity is not visible in the current task.

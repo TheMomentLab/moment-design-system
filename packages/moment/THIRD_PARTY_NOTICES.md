@@ -84,6 +84,6 @@ paths and do not load Noto Sans KR at runtime.
 
 ## Moment Lab fork (2026-09-07)
 
-Moment Design System derives from LDS 0.2.2 (6e037c2a90af28f57139083c16d8cd514940a12a). Changes: Moment theme mapping, original Moment mark supplied by the user, editorial compositions, standalone distribution and Storybook. Original source and notices remain preserved. The Moment brand assets are supplied for this brand, not a general trademark license.
+Moment Design System derives from LDS 0.2.2 (6e037c2a90af28f57139083c16d8cd514940a12a). Changes: Moment theme mapping, original Moment mark supplied by the user, editorial compositions, standalone distribution and Storybook. Public Lockup, ProductLockup and brand Spinner use the supplied Moment mark; public documentation is projected to MDS naming. Original source and notices remain preserved. The Moment brand assets are supplied for this brand, not a general trademark license.
 
 Self-hosted Space Grotesk and JetBrains Mono were retrieved from Google Fonts on 2026-09-07 under SIL OFL 1.1. Font license texts are included in packages/moment/assets/fonts (assets/fonts in the packed distribution), alongside the inherited Pretendard license.

@@ -1,3 +1,5 @@
+import { projectDocs } from './moment/prepare-public-docs.mjs';
+import { momentText } from './moment/presentation.mjs';
 import { build } from 'esbuild';
 import { mkdir, rm, readdir, readFile, writeFile, copyFile, cp } from 'node:fs/promises';
 import path from 'node:path';
@@ -35,12 +37,20 @@ for (const layer of layers) {
     try { await cp(path.join(source, folder), path.join(pkg, 'inherited', layer, folder), { recursive: true }); }
     catch (error) { if (error.code !== 'ENOENT') throw error; }
   }
+  await projectDocs(path.join(source,'docs'),path.join(pkg,'inherited',layer,'docs'));
   for (const file of ['styles.css', 'README.md', 'THIRD_PARTY_NOTICES.md', 'package.json']) {
     try { await copyFile(path.join(source, file), path.join(pkg, 'inherited', layer, file)); }
     catch (error) { if (error.code !== 'ENOENT') throw error; }
   }
 }
 await cp(path.join(root, 'packages/conformance'), path.join(pkg, 'inherited/conformance'), { recursive: true, filter: file => !file.includes('node_modules') });
+// Every public Moment entry must expose the same owned brand implementation.
+for(const [entry,source] of Object.entries({
+ 'core/index':'core','theme/index':'theme',
+ 'core/components/status/Spinner':'Spinner',
+ 'theme/components/brand/Lockup':'Lockup',
+ 'theme/components/brand/ProductLockup':'ProductLockup',
+})) entries[entry]=path.join(pkg,'src/layers',source+'.js');
 await build({ entryPoints: entries, bundle: true, splitting: true, format: 'esm', platform: 'browser', target: 'es2020', jsx: 'automatic', external: ['react', 'react-dom', 'react/*', 'react-dom/*'], plugins: [ldsSourcePlugin], outdir: dist, sourcemap: true, banner: { js: '"use client";' } });
 for (const layer of layers) {
   const source = path.join(root, 'packages', layer, 'src');
@@ -55,7 +65,7 @@ for (const layer of layers) {
       if (!relative.endsWith('.js')) relative += '.js';
       return quote + relative + quote;
     });
-    await writeFile(destination, text);
+    await writeFile(destination, momentText(text));
   }
 }
 await copyFile(path.join(root, 'packages/product/storybook/index.d.ts'), path.join(dist, 'product/storybook.d.ts'));

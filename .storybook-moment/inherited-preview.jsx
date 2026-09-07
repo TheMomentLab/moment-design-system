@@ -11,15 +11,15 @@ import {
 } from '@storybook/addon-docs/blocks';
 import componentGuideIndex from '../docs/components/component-guide-index.json';
 import foundationContent from '../docs/foundations/foundation-content.json';
-import { ComponentGuideForStory } from '../stories/ComponentGuide.shared.jsx';
-import { DesignSystemDirectory } from '../stories/DesignSystemDirectory.shared.jsx';
-import { FoundationGuide } from '../stories/FoundationGuide.shared.jsx';
-import { patternGuides } from '../stories/PatternGuide.data.mjs';
-import { PatternGuide } from '../stories/PatternGuide.shared.jsx';
+import { ComponentGuideForStory } from '../.mds-catalog/ComponentGuide.shared.jsx';
+import { DesignSystemDirectory } from '../.mds-catalog/DesignSystemDirectory.shared.jsx';
+import { FoundationGuide } from '../.mds-catalog/FoundationGuide.shared.jsx';
+import { patternGuides } from '../.mds-catalog/PatternGuide.data.mjs';
+import { PatternGuide } from '../.mds-catalog/PatternGuide.shared.jsx';
 import {
   RelatedPatternLinks,
   StoryGuide,
-} from '../stories/StoryGuide.shared.jsx';
+} from '../.mds-catalog/StoryGuide.shared.jsx';
 
 /**
  * The shell every story renders inside.
@@ -44,7 +44,7 @@ const componentGuideByTitle = new Map(componentGuideIndex.map((guide) => [guide.
 // Foundation pages are titled by the foundation they document, so the last title segment is
 // the join key back to the structured guide.
 const foundationGuideByTitle = new Map(
-  foundationContent.foundations.map((foundation) => [`LDS Core/Foundation/${foundation.title}`, foundation.slug]),
+  foundationContent.foundations.map((foundation) => [`MDS Core/Foundation/${foundation.title}`, foundation.slug]),
 );
 const patternGuideByTitle = new Map(
   patternGuides.map((pattern) => [pattern.storybookTitle, pattern]),
@@ -116,7 +116,7 @@ function GuideDocsPage() {
     const primaryStory = docsContext?.storyById?.()
       ?? docsContext?.componentStories?.()?.[0];
     const metaParameters = preparedMeta?.parameters;
-    title = (preparedMeta?.title ?? primaryStory?.title)?.replace(/^MDS(?= Core| Theme| Product|\/)/, 'LDS');
+    title = preparedMeta?.title ?? primaryStory?.title;
     relatedPatterns = primaryStory?.parameters?.relatedPatterns
       ?? metaParameters?.relatedPatterns
       ?? [];

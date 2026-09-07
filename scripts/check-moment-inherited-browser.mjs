@@ -8,11 +8,18 @@ function replaceOnce(before,after){if(!source.includes(before))throw Error(`Upst
 replaceOnce("path.join(root, 'storybook-static')", "path.join(root, 'storybook-moment')");
 replaceOnce("path.join(root, 'visual-artifacts', 'accessibility')", "path.join(root, 'artifacts', 'moment', 'inherited-accessibility')");
 replaceOnce("filterStories(implementationStories(index.entries || {}))", "filterStories(implementationStories(index.entries || {}).filter(entry => entry.id.startsWith('lds-')))");
-replaceOnce("guideTitles.has(entry.title)", "guideTitles.has(entry.title.replace(/^MDS/, 'LDS'))");
+replaceOnce("guideTitles.has(entry.title)", "guideTitles.has(entry.title.replace(/^MDS/, 'LDS').replace('Moment Lab Logo', 'LK ROBOTICS Logo'))");
 replaceOnce("const browser = await chromium.launch({", "const browser = await chromium.launch({ ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}),");
 replaceOnce("args: [", "args: ['--no-sandbox',");
 source=source.replaceAll('viewMode=story','viewMode=story&mds-audit=1').replaceAll('viewMode=docs','viewMode=docs&mds-audit=1');
 replaceOnce("res.end('Not found');\n    }", "res.end('Not found'); console.error('Missing static asset:', req.url);\n    }");
+// Public Storybook copy must describe MDS; compatibility selectors are not prose.
+replaceOnce('axeCheckedStories += 1;', `const branding = await page.evaluate(() => ({ text: document.body.innerText, links: [...document.querySelectorAll('a[href]')].map(a => a.getAttribute('href')) }));
+      if (/(?<!--)\\bLDS\\b|\\bLK ROBOTICS\\b|@lk-design-system\\//.test(branding.text)) failures.push(story.id + ': upstream branding remains in public copy');
+      axeCheckedStories += 1;`);
+replaceOnce('docsPagesChecked += 1;', `const publicCopy = await page.locator('body').innerText();
+      if (/(?<!--)\\bLDS\\b|\\bLK ROBOTICS\\b|@lk-design-system\\//.test(publicCopy)) failures.push(doc.id + ': upstream branding remains in Docs');
+      docsPagesChecked += 1;`);
 // Keep the runner responsive and show real progress, not a new test threshold.
 replaceOnce('axeCheckedStories += 1;', "axeCheckedStories += 1; if (axeCheckedStories % 25 === 0) console.log(`MDS inherited ${axeCheckedStories}/${stories.length} stories checked`);");
 const generated=path.join(root,`scripts/.moment-inherited-${(process.env.A11Y_SHARD||'all').replace('/','-')}.generated.mjs`);

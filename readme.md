@@ -51,7 +51,7 @@ export function ResearchTools() {
 }
 ```
 
-`MdsProvider`는 원본 `LdsProvider`의 별칭입니다. `LdsProvider`, `Lockup`, `SourceTag`, `Tag` 등 기존 이름과 동작을 보존합니다. Moment 전용 기능은 `MomentMark`, `MomentLockup`, `MomentSourceTag`, `MonoLabel`, `EditorialCard`입니다. `core`, `theme`, `product`, `headless`, `platform`, `density`, `storybook` 하위 진입점과 원본 공개·비공개 경계도 유지합니다. `mds-conformance` CLI와 `conformance/*` 자료가 포함됩니다.
+`MdsProvider`는 원본 `LdsProvider`의 별칭입니다. 기존 API 이름을 보존하며 `Lockup`, `ProductLockup`, `Spinner`의 brand 표현은 Moment Lab 자산을 사용합니다. 일반 컴포넌트와 circular Spinner의 동작은 유지합니다. Moment 전용 기능은 `MomentMark`, `MomentLockup`, `MomentSourceTag`, `MonoLabel`, `EditorialCard`입니다. `core`, `theme`, `product`, `headless`, `platform`, `density`, `storybook` 하위 진입점과 원본 공개·비공개 경계도 유지합니다. `mds-conformance` CLI와 `conformance/*` 자료가 포함됩니다.
 
 기본 UI는 LDS 규격입니다. EditorialCard는 명시적으로 사용하는 콘텐츠 확장이며, 일반 콘텐츠 영역에 `data-ml-expression="editorial"`을 지정하면 ZIP 기반 둥근 표현을 선택할 수 있습니다. 데이터·네트워크·로봇 제어·안전 정책·게시 흐름은 소비 앱이 소유합니다.
 

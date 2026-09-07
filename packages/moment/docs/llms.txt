@@ -1,13 +1,14 @@
 # Moment Design System (MDS)
 
-Moment Lab is a one-person robotics software research lab. Media/curation is one activity, not the lab's complete identity. Follow the user's definition over the imported ZIP's narrower media description.
+Moment Lab is a one-person robotics software research lab. MDS supports research tools, software products, operational interfaces, technical documentation and research sharing.
 
-MDS inherits all of LDS Core, Theme, Product and Conformance. Do not reduce the system to editorial controls. The root React export preserves the complete upstream API. Layer subpaths retain public and blocked exports; private helper paths remain private. All original stories, documentation, contracts, assets and profile modes remain available.
+Use @themomentlab/design-system and @themomentlab/design-system/styles.css. The package includes Core, Theme, Product and Conformance. Root, layer and component subpaths share the same runtime. MdsProvider provides light/dark/auto, profiles, direction, locale, storage and portal behavior.
 
-Use @themomentlab/design-system/styles.css for the full Moment theme. Core/Theme/Product layer exports and helpers are available as subpaths. MdsProvider is an alias for the original LdsProvider, with the same runtime context, theme, density profile, direction, locale, storage and portal behavior. MomentLockup/MomentSourceTag are additions; Lockup/SourceTag retain their upstream contracts.
+Lockup, ProductLockup and Spinner's brand variant render Moment artwork. Circular Spinner and generic components preserve the base behavior. MomentLockup is the composed HTML identity; MomentMark is the supplied vector symbol. MomentSourceTag, MonoLabel and EditorialCard support optional research-content presentation.
 
-Read inherited/core/docs/llms.txt, inherited/theme/docs/llms.txt and inherited/product/docs/llms.txt for complete inherited component and foundation contracts. The inherited conformance CLI is mds-conformance. Root brand tokens use --ml-*; inherited semantic and component token names are intentionally compatible.
+Use the public Storybook for current MDS guidance. Keep default component anatomy, dimensions, type scales, states and accessibility contracts. Brand colors and artwork belong to the theme. Editorial curvature requires an explicit opt-in.
 
-Source and decisions: https://github.com/TheMomentLab/moment-design-system
+The conformance CLI is mds-conformance. Brand tokens use --ml-*; technical selectors and API aliases remain compatible. Publishing, networking, robot control and application state belong to the consuming product.
 
-When Moment references conflict, LDS contracts and geometry take priority. Moment primary button fill uses its accessible action color; functional status colors and navigation states stay LDS-owned. Editorial components and data-ml-expression="editorial" are opt-in additions.
+Source: https://github.com/TheMomentLab/moment-design-system
+License and upstream attribution: THIRD_PARTY_NOTICES.md.

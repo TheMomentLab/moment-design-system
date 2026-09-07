@@ -1,3 +1,4 @@
+import { momentText } from './moment/presentation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -11,7 +12,7 @@ assert.deepEqual(missing,[],'Every original story and docs route must remain ava
 for(const entry of baseline.stories){
  const actual=index.entries[entry.id];
  assert.equal(actual.type,entry.type,`Changed story/docs kind: ${entry.id}`);
- assert.equal(actual.title,entry.title.replace(/^LDS/,'MDS'),`Wrong catalog group: ${entry.id}`);
+ assert.equal(actual.title,momentText(entry.title),`Wrong catalog group: ${entry.id}`);
 }
 const inheritedIds = new Set(baseline.stories.map(entry => entry.id));
 assert.deepEqual(Object.values(index.entries).filter(entry => inheritedIds.has(entry.id)).map(entry => entry.id), baseline.stories.map(entry => entry.id), 'Inherited sidebar order must match LDS, including Docs and variants');

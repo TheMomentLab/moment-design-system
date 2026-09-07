@@ -538,7 +538,7 @@
       },
       "componentMapping": {
         "verdict": "reviewed",
-        "detail": "Reuse unchanged LDS Core and isolate Moment theme/editorial ownership.",
+        "detail": "Preserve generic APIs and implement Moment-owned logo, product identity and brand loading.",
         "evidence": [
           {
             "kind": "source",
@@ -552,7 +552,7 @@
         "decisions": [
           {
             "decisionId": "owner-public-export",
-            "outcome": "Standalone Moment ESM and declaration entry points expose the composed Moment components plus unchanged Core API.",
+            "outcome": "Standalone Moment ESM and declaration entry points expose the composed Moment components plus the compatible Core API.",
             "evidence": [
               {
                 "kind": "source",
@@ -566,7 +566,7 @@
           },
           {
             "decisionId": "reuse-composition-choice",
-            "outcome": "All original Core/Theme/Product APIs remain unchanged. MomentLockup, MomentSourceTag, MonoLabel and EditorialCard compose existing primitives.",
+            "outcome": "All original Core/Theme/Product API names remain available. The three brand implementations use Moment artwork. MomentLockup, MomentSourceTag, MonoLabel and EditorialCard compose existing primitives.",
             "evidence": [
               {
                 "kind": "source",
