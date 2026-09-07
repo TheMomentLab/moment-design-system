@@ -101,6 +101,6 @@ export default {
     const theme = context.globals.theme || 'light';
     const isMoment = context.id.startsWith('mds-');
     React.useEffect(() => { document.documentElement.dataset.theme = theme; document.documentElement.lang = 'ko'; }, [theme]);
-    return isMoment ? <main data-theme={theme} className="ml-specimen"><Story /></main> : inherited.decorators[0](Story, context);
+    return isMoment ? <main data-theme={theme} className={`ml-specimen${context.title.startsWith('MDS Theme/Brand/Moment Lab/') ? ' ml-brand-specimen' : ''}`}><Story /></main> : inherited.decorators[0](Story, context);
   }],
 };

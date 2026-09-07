@@ -1,20 +1,7 @@
 import React from 'react';
-import { MomentLockup, MomentMark, MonoLabel } from '../src/index.jsx';
-import { Header } from './shared.jsx';
-export default { id: 'mds-foundation-identity',  title: 'MDS Theme/Brand/Moment Lab/Identity', parameters: { docs: { description: { component: 'Moment Lab은 1인 로봇 소프트웨어 연구소입니다. MDS는 연구 도구, 제품, 운영 화면과 연구 기록을 위한 통합 디자인 시스템입니다.' } } } };
-export const Identity = { name: '모먼트랩', render: () => <div>
-  <Header title="Moment Lab">1인 로봇 소프트웨어 연구소. 연구에서 구현까지 이어지는 디자인 시스템.</Header>
-  <section className="ml-identity-hero" data-theme="dark">
-    <MomentLockup/>
-    <div className="ml-identity-hero__mark"><MomentMark size={520} decorative/></div>
-    <h2>로봇 소프트웨어를<br/>연구하고 만듭니다.</h2>
-    <p>RESEARCH · BUILD · SHARE</p>
-  </section>
-  <h2>연구와 개발을 잇는 공통 기반</h2>
-  <div className="ml-specimen-grid">
-    <section className="ml-specimen-panel"><MonoLabel translation="연구와 구현">RESEARCH & BUILD</MonoLabel><h2>도구부터 제품까지</h2><p>로봇 소프트웨어 연구, 실험 도구, 개발 인터페이스와 운영 화면에 같은 기반을 사용합니다.</p></section>
-    <section className="ml-specimen-panel"><MonoLabel translation="기록과 공유">DOCUMENT & SHARE</MonoLabel><h2>과정과 근거를 함께</h2><p>연구 기록, 기술 문서, 프로젝트 소개와 미디어 콘텐츠를 만듭니다. 콘텐츠 발행은 연구소 활동의 한 부분입니다.</p></section>
-  </div>
-</div> };
-export const Marks = { name: '마크와 최소 크기', render: () => <div><Header title="Moment mark">회전축, 팔, 질량과 호. 모멘트와 포착된 순간을 담는 하나의 단색 마크.</Header><div className="ml-specimen-grid">{['light','dark'].map(theme=><section key={theme} data-theme={theme} className="ml-specimen-panel"><div className="ml-specimen-row">{[16,24,44,100].map(size=><div key={size}><MomentMark size={size}/><p className="ml-token-name">{size}px</p></div>)}</div></section>)}</div></div> };
-export const Lockups = { name: '락업', render: () => <div><Header title="Moment lockup">연구소의 심볼과 워드마크. SVG 기반 Lockup과 조합형 MomentLockup을 제공합니다.</Header><div className="ml-specimen-grid"><section className="ml-specimen-panel"><MomentLockup/></section><section className="ml-specimen-panel" data-theme="dark"><MomentLockup layout="stacked"/></section></div><h2>작은 조합형</h2><MomentLockup size="sm"/></div> };
+import {MomentLockup,MomentMark,Lockup} from '../src/index.jsx';
+import {BrandPage,BrandSection,BrandGrid,BrandPanel,BrandTable} from './BrandFormat.jsx';
+export default {id:'mds-foundation-identity',title:'MDS Theme/Brand/Moment Lab/Identity'};
+export const Identity={name:'모먼트랩',render:()=> <BrandPage title="Moment Lab" description="1인 로봇 소프트웨어 연구소. 브랜드 식별과 제품 UI의 용도를 구분합니다."><BrandSection title="브랜드 식별"><BrandPanel><Lockup height={40}/><p>로봇 소프트웨어를 연구하고 만듭니다.</p></BrandPanel></BrandSection><BrandSection title="사용 범위"><BrandTable heads={['범위','내용']} rows={[["연구·구현",'실험 도구, 로봇 소프트웨어 제품, 운영 인터페이스'],['기록·공유','재현 로그, 기술 문서, 프로젝트 소개와 연구 콘텐츠']]}/></BrandSection><BrandSection title="표기 규칙"><p>이름은 Moment Lab, 디자인 시스템은 Moment Design System(MDS)으로 표기합니다. 미디어는 연구 활동의 일부이며 연구소의 전체 정체성을 대신하지 않습니다.</p></BrandSection></BrandPage>};
+export const Marks={name:'마크와 최소 크기',render:()=> <BrandPage title="심볼 · 크기별 확인" description="제공된 SVG의 비율을 유지하면서 실제 슬롯 크기를 비교합니다."><BrandSection title="크기와 배경"><BrandGrid>{['light','dark'].map(theme=><BrandPanel key={theme} theme={theme}><strong>{theme}</strong><div style={{display:'flex',alignItems:'end',flexWrap:'wrap',gap:'var(--space-4)'}}>{[16,24,44,100].map(size=><div key={size}><MomentMark size={size}/><p>{size}px</p></div>)}</div></BrandPanel>)}</BrandGrid></BrandSection><BrandSection title="최소 크기 적용"><p>16px는 표시 비교용입니다. 모든 매체의 광학 최소 크기로 승인된 값은 아닙니다. 세부 형태가 읽히지 않는 슬롯에서는 크기를 늘립니다.</p></BrandSection></BrandPage>};
+export const Lockups={name:'락업',render:()=> <BrandPage title="제품 UI 파생형" description="마크·가로형·세로형과 조합형의 용도를 비교합니다."><BrandSection title="SVG Lockup"><BrandGrid>{['mark','inline','stacked'].map(variant=><BrandPanel key={variant}><strong>{variant}</strong><Lockup variant={variant} height={variant==='stacked'?80:32}/></BrandPanel>)}</BrandGrid></BrandSection><BrandSection title="조합형 MomentLockup"><BrandGrid><BrandPanel><MomentLockup size="sm"/></BrandPanel><BrandPanel><MomentLockup layout="stacked" size="sm"/></BrandPanel></BrandGrid></BrandSection><BrandSection title="사용 기준"><p>제품 헤더에는 SVG Lockup을 사용합니다. 소개 문구를 함께 표시할 때 조합형을 선택하며, 좁은 슬롯에는 마크를 사용합니다.</p></BrandSection></BrandPage>};

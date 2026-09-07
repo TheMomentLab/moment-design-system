@@ -63,3 +63,5 @@ MDS 색상 정합성 검토: Foundation Color의 1280px 역할 표와 390px 다�
 Annotated Image의 signal 라벨은 MDS Primary 명도에 맞춰 전경을 선택한다(라이트 흰색, 다크 검은색). 원본 파일은 보존하고 공통 runtime projection을 Storybook과 패키지 번들에 함께 적용한다. 상태색 라벨과 컴포넌트 API는 유지한다.
 
 독립 소비 계약: 외부 임시 디렉터리에서 실제 npm tarball을 설치하고 React 18/19의 strict TypeScript, SSR/hydration, 저장 테마 복원, 프로필, 포털 테마, Escape 및 초점 복귀, 폰트 자산과 Conformance fixture/기본 계약을 검증한다. 원본 LdsProvider는 보존하고 MdsProvider의 기본 저장 키와 hydration 초기화를 분리한다. 공개 계층 스타일 경로는 완전한 MDS 테마를 가리킨다. CI consumer matrix와 scripts/fixtures/moment-consumer가 실행 가능한 증거다.
+
+브랜드 문서 형식 정합성: stories/Brand.shared.jsx와 BrandProductLockup.stories.jsx의 문서 폭, 정렬, 섹션 간격, 비교 패널과 변형 순서를 MDS 브랜드 예시에 적용했다. 소개 hero와 색상 페이지의 EditorialCard 예시를 제거했다. Moment 미제공 자산·미확정 광학 규정은 같은 문서 섹션에서 상태를 명시한다. 1280px Color 배경 비교와 로고 개요, 390px Identity와 Product Lockup을 렌더 검토했다. 좁은 화면 비교에서 발견한 portal 워드마크 잘림은 SVG viewBox를 실제 문구에 맞춰 수정하고 경계 검사를 추가했다. 원본 컴포넌트 API와 카탈로그 경로는 유지한다.

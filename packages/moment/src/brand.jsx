@@ -7,7 +7,7 @@ export function BrandLockup({variant='inline',tone='ink',color,height,title,deco
  const selected=['mark','stacked','inline','portal'].includes(variant)?variant:'inline';
  const h=Math.max(16,Number.isFinite(height)?height:selected==='stacked'?64:28);
  const stacked=selected==='stacked',mark=selected==='mark';
- const width=mark?100:stacked?300:440,viewHeight=stacked?170:100;
+ const width=mark?100:stacked?300:selected==='portal'?600:440,viewHeight=stacked?170:100;
  const fill=color||(tone==='white'?'#FFFFFF':tone==='current'?'currentColor':'var(--color-semantic-label-normal)');
  const label=title??(selected==='portal'?'Moment Lab Portal':'Moment Lab');
  return <svg viewBox={`0 0 ${width} ${viewHeight}`} width={h*width/viewHeight} height={h} preserveAspectRatio="xMidYMid meet" data-lockup-variant={selected} role={decorative?undefined:'img'} aria-label={decorative?undefined:label} aria-hidden={decorative||undefined} {...rest} style={{display:'block',maxWidth:'100%',height:'auto',...style}}>
