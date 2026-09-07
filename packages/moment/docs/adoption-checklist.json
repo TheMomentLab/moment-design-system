@@ -3,12 +3,12 @@
   "schemaVersion": 1,
   "kind": "lds-ui-adoption-contract",
   "contractVersion": "2",
-  "invariant": "컴포넌트 교체만으로 LDS 전환은 완료되지 않는다.",
+  "invariant": "컴포넌트 교체만으로 MDS 전환은 완료되지 않는다.",
   "triggers": [
     "new product UI",
-    "LDS adoption",
-    "LDS migration",
-    "LDS conversion",
+    "MDS adoption",
+    "MDS migration",
+    "MDS conversion",
     "UI restyle",
     "UI parity implementation",
     "material product UI redesign"
@@ -38,7 +38,7 @@
     {
       "id": "tokensAndTheme",
       "title": "Tokens and theme runtime",
-      "purpose": "Install the complete LDS runtime and map visual values to the owned semantic and component token layers.",
+      "purpose": "Install the complete MDS runtime and map visual values to the owned semantic and component token layers.",
       "foundationIds": [
         "design-token",
         "color"
@@ -75,7 +75,7 @@
       "hardTriggers": [
         {
           "id": "visual-source-change",
-          "fact": "A changed UI source or stylesheet contains visual declarations or LDS imports.",
+          "fact": "A changed UI source or stylesheet contains visual declarations or MDS imports.",
           "requiredEvidenceKinds": [
             "source",
             "token",
@@ -87,7 +87,7 @@
     {
       "id": "layoutAndVisualFoundations",
       "title": "Layout and visual foundations",
-      "purpose": "Preserve information hierarchy across real content, narrow viewports, overflow, and the LDS visual foundation scales.",
+      "purpose": "Preserve information hierarchy across real content, narrow viewports, overflow, and the MDS visual foundation scales.",
       "foundationIds": [
         "typography",
         "layout",
@@ -325,7 +325,7 @@
       "hardTriggers": [
         {
           "id": "interactive-source-change",
-          "fact": "A changed UI source adds or modifies an interactive element, handler, or LDS control.",
+          "fact": "A changed UI source adds or modifies an interactive element, handler, or MDS control.",
           "requiredEvidenceKinds": [
             "source",
             "check"
@@ -356,7 +356,7 @@
       },
       {
         "id": "exception-shared-authoring",
-        "label": "remaining exception or shared LDS authoring need"
+        "label": "remaining exception or shared MDS authoring need"
       }
     ],
     "references": [

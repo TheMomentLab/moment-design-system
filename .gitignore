@@ -54,3 +54,6 @@ packages/moment/inherited/
 scripts/.moment-inherited-*.generated.mjs
 
 .mds-docs/
+
+packages/moment/docs/*.schema.json
+packages/moment/docs/references/

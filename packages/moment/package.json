@@ -66,7 +66,7 @@
       "types": "./dist/core/components/*.d.ts",
       "import": "./dist/core/components/*.js"
     },
-    "./core/styles.css": "./inherited/core/styles.css",
+    "./core/styles.css": "./styles.css",
     "./core/tokens/*": "./inherited/core/tokens/*",
     "./core/assets/*": "./inherited/core/assets/*",
     "./core/package.json": "./inherited/core/package.json",
@@ -82,7 +82,7 @@
       "types": "./dist/theme/components/*.d.ts",
       "import": "./dist/theme/components/*.js"
     },
-    "./theme/styles.css": "./inherited/theme/styles.css",
+    "./theme/styles.css": "./styles.css",
     "./theme/tokens/*": "./inherited/theme/tokens/*",
     "./theme/assets/*": "./inherited/theme/assets/*",
     "./theme/package.json": "./inherited/theme/package.json",
@@ -102,7 +102,7 @@
       "types": "./dist/product/storybook.d.ts",
       "import": "./dist/product/storybook.js"
     },
-    "./product/styles.css": "./inherited/product/styles.css",
+    "./product/styles.css": "./styles.css",
     "./product/tokens/*": "./inherited/product/tokens/*",
     "./product/assets/*": "./inherited/product/assets/*",
     "./product/package.json": "./inherited/product/package.json",

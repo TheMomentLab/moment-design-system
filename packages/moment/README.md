@@ -12,7 +12,7 @@
 
 ## 시작하기
 
-Node.js 22.17 이상, npm 10, Python 3를 사용합니다.
+저장소 개발에는 Node.js 22.17 이상, npm 10, Python 3를 사용합니다. 완성된 패키지를 설치하는 소비 앱에는 Python이나 LDS 저장소가 필요하지 않습니다.
 
 ```sh
 npm ci
@@ -51,10 +51,22 @@ export function ResearchTools() {
 }
 ```
 
-`MdsProvider`는 원본 `LdsProvider`의 별칭입니다. 기존 API 이름을 보존하며 `Lockup`, `ProductLockup`, `Spinner`의 brand 표현은 Moment Lab 자산을 사용합니다. 일반 컴포넌트와 circular Spinner의 동작은 유지합니다. Moment 전용 기능은 `MomentMark`, `MomentLockup`, `MomentSourceTag`, `MonoLabel`, `EditorialCard`입니다. `core`, `theme`, `product`, `headless`, `platform`, `density`, `storybook` 하위 진입점과 원본 공개·비공개 경계도 유지합니다. `mds-conformance` CLI와 `conformance/*` 자료가 포함됩니다.
+`MdsProvider`는 기존 런타임 컨텍스트를 공유하며 테마 저장 키는 `mds-theme`입니다. 서버와 클라이언트의 첫 렌더를 맞춘 뒤 저장된 테마를 복원합니다. 기존 `LdsProvider` 이름은 호환성을 위해 그대로 제공합니다. 기존 API 이름을 보존하며 `Lockup`, `ProductLockup`, `Spinner`의 brand 표현은 Moment Lab 자산을 사용합니다. 일반 컴포넌트와 circular Spinner의 동작은 유지합니다. Moment 전용 기능은 `MomentMark`, `MomentLockup`, `MomentSourceTag`, `MonoLabel`, `EditorialCard`입니다. `core`, `theme`, `product`, `headless`, `platform`, `density`, `storybook` 하위 진입점과 원본 공개·비공개 경계도 유지합니다. `mds-conformance` CLI와 `conformance/*` 자료가 포함됩니다.
 
 기본 UI는 LDS 규격입니다. EditorialCard는 명시적으로 사용하는 콘텐츠 확장이며, 일반 콘텐츠 영역에 `data-ml-expression="editorial"`을 지정하면 ZIP 기반 둥근 표현을 선택할 수 있습니다. 데이터·네트워크·로봇 제어·안전 정책·게시 흐름은 소비 앱이 소유합니다.
 
 소스와 전체 문서: https://github.com/TheMomentLab/moment-design-system
 
 THIRD_PARTY_NOTICES.md와 assets/fonts의 라이선스를 함께 보존하세요.
+
+## 독립 앱의 런타임 구성
+
+스타일은 앱 진입점에서 `@themomentlab/design-system/styles.css`를 한 번 가져옵니다. `core/styles.css`, `theme/styles.css`, `product/styles.css`도 같은 완전한 MDS 테마로 연결됩니다. 폰트와 자산은 패키지에 포함되므로 외부 폰트 서버나 원본 저장소 경로를 설정하지 않습니다.
+
+서버 렌더링에서는 `MdsColorSchemeScript`를 head에 넣고 `MdsProvider`와 동일한 `storageKey`, `defaultColorScheme`를 사용합니다. CSP를 사용하는 앱은 스크립트에 `nonce`를 전달합니다. 서버 HTML에 초기 `data-theme`를 지정하고, 저장 테마로 바뀌는 html 속성은 프레임워크에 맞게 hydration 경고를 처리합니다. 사용자 테마에 따라 다른 콘텐츠는 hydration 뒤에 복원됩니다.
+
+`MdsProvider`를 앱 루트에 배치하면 포털에도 테마·방향·프로필이 전달됩니다. 앱별로 테마를 분리하려면 `storageKey`를 지정하고, 저장하지 않으려면 `persist={false}`를 사용합니다. `colorScheme`를 직접 제어할 때는 `onColorSchemeChange`에서 앱 상태를 갱신합니다. 기존 LDS 저장값을 명시적으로 이어받을 때만 `storageKey="lk-theme"`를 사용합니다.
+
+`mds-conformance verify-contract`와 `verify-fixtures`는 설치된 패키지만으로 실행할 수 있습니다. 기존 `check`는 robotics-ui/lds3d-ui 프로필용 검사이므로 해당 소비 앱 계약과 루트 옵션이 필요하며, 임의의 React 앱을 자동 인증하는 명령이 아닙니다.
+
+저장소의 `npm run check:moment:consumer`는 워크스페이스 밖에서 실제 tarball을 설치해 타입·SSR/hydration·테마 저장/복원·포털·키보드·폰트·CLI를 검증합니다. `MDS_REACT_MAJOR=18` 또는 `19`로 실행하며 CI는 두 버전을 모두 검사합니다. 실행 가능한 소비 앱 예시는 `scripts/fixtures/moment-consumer`에 있습니다.

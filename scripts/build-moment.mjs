@@ -20,6 +20,15 @@ async function walk(dir) {
 await rm(dist, { recursive: true, force: true });
 await rm(path.join(pkg, 'inherited'), { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
+// Consumers receive the schemas and default conformance contract, not workspace paths.
+for (const file of await readdir(path.join(root,'docs/references/adoption'))) {
+ if(file.endsWith('.schema.json')) await copyFile(path.join(root,'docs/references/adoption',file),path.join(pkg,'docs',file));
+}
+await mkdir(path.join(pkg,'docs/references/package-split'),{recursive:true});
+for(const file of ['CROSS_REPOSITORY_STYLE_CONTRACT.json','CROSS_REPOSITORY_STYLE_CONTRACT.schema.json']) {
+ await copyFile(path.join(root,'docs/references/package-split',file),path.join(pkg,'docs/references/package-split',file));
+}
+
 for (const layer of layers) {
   const source = path.join(root, 'packages', layer);
   const manifest = JSON.parse(await readFile(path.join(source, 'package.json'), 'utf8'));

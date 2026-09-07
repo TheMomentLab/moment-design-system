@@ -53,3 +53,26 @@ jobs:
         with:
           name: inherited-evidence-${{ matrix.shard }}
           path: artifacts/moment/inherited-accessibility
+  consumer:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        react: ['18', '19']
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/setup-node@v6.4.0
+        with:
+          node-version: '22.17.1'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run check:moment:consumer
+        env:
+          MDS_REACT_MAJOR: ${{ matrix.react }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: consumer-evidence-react-${{ matrix.react }}
+          path: artifacts/moment

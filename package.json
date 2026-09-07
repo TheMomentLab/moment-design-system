@@ -166,7 +166,8 @@
     "check:moment": "node scripts/check-moment.mjs",
     "check:moment:browser": "node scripts/check-moment-browser.mjs",
     "check:moment:catalog": "node scripts/check-moment-catalog.mjs",
-    "check:moment:inherited-browser": "node scripts/check-moment-inherited-browser.mjs"
+    "check:moment:inherited-browser": "node scripts/check-moment-inherited-browser.mjs",
+    "check:moment:consumer": "node scripts/check-moment-consumer.mjs"
   },
   "peerDependencies": {
     "react": ">=18 <20",
