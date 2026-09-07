@@ -1,3 +1,5 @@
+import { readFile } from 'node:fs/promises';
+import { momentRuntime } from './moment/runtime.mjs';
 import path from 'node:path';
 import { existsSync } from 'node:fs';
 export const root = path.resolve(import.meta.dirname, '..');
@@ -10,6 +12,7 @@ export function resolveLds(specifier) {
   return [base, base + '.js', base + '.jsx', path.join(base, 'index.js')].find(file => existsSync(file)) || null;
 }
 export const ldsSourcePlugin = { name: 'mds-inherited-sources', setup(build) {
+  build.onLoad({filter: /[\\/]components[\\/]data[\\/]AnnotatedImage\.jsx$/}, async args => ({contents:momentRuntime(await readFile(args.path,'utf8'),args.path),loader:'jsx'}));
   build.onResolve({ filter: /^@lk-design-system\/lds-(core|theme|product)(\/|$)/ }, args => {
     const resolved = resolveLds(args.path);
     return resolved ? { path: resolved } : undefined;

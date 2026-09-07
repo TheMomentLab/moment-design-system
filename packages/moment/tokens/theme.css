@@ -236,6 +236,7 @@
   --ml-reading-max: 42rem;
   --ml-duration: 120ms;
   --ml-accent-text: #00677D;
+  --ml-annotation-signal-fg: #FFFFFF;
   --ml-bg: var(--ml-canvas);
   --ml-surface: var(--ml-paper);
   --ml-surface-card: #FFFFFF;
@@ -485,6 +486,7 @@
   --ml-reading-max: 42rem;
   --ml-duration: 120ms;
   --ml-accent-text: #79D8EA;
+  --ml-annotation-signal-fg: #000000;
   --ml-bg: var(--ml-dark-bg);
   --ml-surface: var(--ml-dark-surface);
   --ml-surface-card: var(--ml-dark-surface);
@@ -735,6 +737,7 @@
   --ml-reading-max: 42rem;
   --ml-duration: 120ms;
   --ml-accent-text: #79D8EA;
+  --ml-annotation-signal-fg: #000000;
   --ml-bg: var(--ml-dark-bg);
   --ml-surface: var(--ml-dark-surface);
   --ml-surface-card: var(--ml-dark-surface);

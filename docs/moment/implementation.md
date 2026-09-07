@@ -59,3 +59,5 @@ The full browser sweep rejects visible LDS/LK company branding in stories and Do
 브랜드 전환 렌더 검토: Moment Lab Logo의 390px 마크·가로/세로·reverse 상태와 Product Lockup의 1280px 기본·compact·reverse 상태를 확인했다. 기존 카탈로그 순서와 일반 컴포넌트 치수는 유지한다. CSS 토큰과 저장된 Storybook URL의 기술 식별자는 호환성을 위해 보존한다.
 
 MDS 색상 정합성 검토: Foundation Color의 1280px 역할 표와 390px 다크 버튼의 기본·로딩·비활성 상태를 렌더 검토했다. 기본 표면 대비 Primary는 라이트 6.27:1, 다크 5.15:1, 다크 읽기용 accent는 10.92:1, 주요 버튼의 흰 글자는 6.49:1이다. 값은 sRGB 상대 휘도로 계산했다. 고유 아이스 블루는 마크에 유지하며, 의미색·레이아웃·키보드 동작의 계약은 바꾸지 않는다.
+
+Annotated Image의 signal 라벨은 MDS Primary 명도에 맞춰 전경을 선택한다(라이트 흰색, 다크 검은색). 원본 파일은 보존하고 공통 runtime projection을 Storybook과 패키지 번들에 함께 적용한다. 상태색 라벨과 컴포넌트 API는 유지한다.

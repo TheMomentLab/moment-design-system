@@ -1,3 +1,4 @@
+import { momentRuntime } from './runtime.mjs';
 import path from 'node:path';
 import { babelParse, traverse, types, generate } from 'storybook/internal/babel';
 import { momentText, momentDocument } from './presentation.mjs';
@@ -7,6 +8,7 @@ export function presentationPlugin() {
   name: 'moment-public-copy', enforce: 'pre',
   transform(source, id) {
    const file=id.split('?')[0];
+   if(file.startsWith(root + '/') && file.endsWith('/components/data/AnnotatedImage.jsx')) return {code:momentRuntime(source,file),map:null};
    if (!file.startsWith(root + '/') || !/(\/\.mds-catalog\/|\/packages\/moment\/stories\/|\/docs\/|\/packages\/(?:core|theme|product)\/(?:src|storybook)\/)/.test(file)) return;
    if(file.endsWith('.json')) {
     return {code:JSON.stringify(momentDocument(JSON.parse(source))),map:null};
