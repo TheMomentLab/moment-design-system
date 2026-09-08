@@ -26,7 +26,7 @@ export function MomentSourceTag({ children, href, className = '', ...rest }) {
 
 export function EditorialCard({ category = 'ROBOTICS', categoryLabel = '로보틱스', title, summary, source, variant = 'editorial', headingLevel = 3, className = '', ...rest }) {
   const Heading = `h${headingLevel}`;
-  return <Card {...rest} as="article" interactive={false} elevation="none" className={`ml-editorial-card ml-editorial-card--${variant} ${className}`}>
+  return <Card {...rest} as="article" interactive={false} className={`ml-editorial-card ml-editorial-card--${variant} ${className}`}>
     <MonoLabel translation={categoryLabel}>{category}</MonoLabel>
     <Heading className="ml-editorial-card__title">{title}</Heading>
     <p className="ml-editorial-card__summary">{summary}</p>

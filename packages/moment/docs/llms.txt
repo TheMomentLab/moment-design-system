@@ -6,7 +6,7 @@ Use @themomentlab/design-system and @themomentlab/design-system/styles.css. The 
 
 Lockup, ProductLockup and Spinner's brand variant render Moment artwork. Circular Spinner and generic components preserve the base behavior. MomentLockup is the composed HTML identity; MomentMark is the supplied vector symbol. MomentSourceTag, MonoLabel and EditorialCard support optional research-content presentation.
 
-Use the public Storybook for current MDS guidance. Keep default component anatomy, dimensions, type scales, states and accessibility contracts. Brand colors and artwork belong to the theme. Editorial curvature requires an explicit opt-in.
+Use the public Storybook for current MDS guidance. Keep default component anatomy, dimensions, type scales, states and accessibility contracts. Brand colors and artwork belong to the theme. Only identity colors and logo/CI assets differ. Typography, font stacks, spacing, radii, shadows, motion and component behavior follow LDS. Legacy --ml-* typography/spacing names are aliases; there is no separate editorial expression.
 
 The conformance CLI is mds-conformance. Brand tokens use --ml-*; technical selectors and API aliases remain compatible. Publishing, networking, robot control and application state belong to the consuming product.
 

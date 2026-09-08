@@ -51,7 +51,8 @@ try{
  const trigger=page.getByRole('button',{name:'실행 조건 확인'});await trigger.click();const dialog=page.getByRole('dialog',{name:'실행 조건'});await dialog.waitFor();
  assert(await dialog.evaluate(e=>e.contains(document.activeElement)));assert.equal(await dialog.evaluate(e=>getComputedStyle(e).getPropertyValue('--color-semantic-primary-normal').trim().toLowerCase()),'#3695ac');
  await page.keyboard.press('Escape');await dialog.waitFor({state:'hidden'});await page.waitForFunction(()=>document.activeElement?.textContent==='실행 조건 확인');
- assert.equal(await page.evaluate(()=>document.fonts.check('16px Pretendard')),true);
+ assert.equal(await page.evaluate(()=>document.fonts.check('16px "Pretendard JP"')),true);
+ const font=await page.getByRole('button',{name:'테마 전환'}).evaluate(e=>getComputedStyle(e).fontFamily);assert(font.includes('Pretendard JP'));assert(!/Space Grotesk|JetBrains/.test(font));
  await page.reload();await page.waitForFunction(()=>document.documentElement.dataset.theme==='dark' && document.querySelector('output')?.textContent==='dark');
  assert.deepEqual(errors,[]);assert.deepEqual(missing,[]);
  await mkdir(path.join(root,'artifacts/moment'),{recursive:true});await page.screenshot({path:path.join(root,`artifacts/moment/consumer-react${major}.png`)});

@@ -1,49 +1,30 @@
-/* ============================================================
-   Moment Lab — Typography tokens
-   Three families, each with one job:
-   · Space Grotesk — display, wordmark, Latin headings
-   · JetBrains Mono — kickers, labels, specs, metadata (UPPERCASE + tracking)
-   · Pretendard     — Korean body copy
-   ============================================================ */
+/* Compatibility names only; LDS owns every type value. */
 :root {
-  /* — Families ————————————————————————————— */
-  --ml-font-display: 'Space Grotesk', system-ui, sans-serif;
-  --ml-font-mono:    'JetBrains Mono', ui-monospace, monospace;
-  --ml-font-body:    'Pretendard', system-ui, sans-serif;       /* Korean + Latin body */
-
-  /* — Weights ——————————————————————————————— */
-  --ml-weight-regular:  400;
-  --ml-weight-medium:   500;
-  --ml-weight-semibold: 600;
-  --ml-weight-bold:     700;
-  --ml-weight-black:    800;   /* card-news headlines (Pretendard 800) */
-
-  /* — Display / heading sizes (Space Grotesk) ———— */
-  --ml-display-xl: 100px;  /* card-news cover headline */
-  --ml-display-l:  62px;   /* banner lockup */
-  --ml-display-m:  42px;   /* logo lockup, page name */
-  --ml-display-s:  30px;   /* card titles */
-  --ml-title:      20px;   /* section titles (소개 / 게시물) */
-
-  /* — Body sizes (Pretendard) —————————————————— */
-  --ml-body-l:  17px;
-  --ml-body-m:  15px;   /* default body */
-  --ml-body-s:  14px;
-  --ml-body-xs: 13px;
-
-  /* — Mono label sizes (JetBrains Mono) ——————————— */
-  --ml-mono-m:  13px;
-  --ml-mono-s:  11px;   /* default kicker / label */
-  --ml-mono-xs: 10px;
-
-  /* — Tracking ——————————————————————————————— */
-  --ml-track-display: -0.025em;  /* tight, for big Space Grotesk */
-  --ml-track-tight:   -0.01em;   /* Korean body */
-  --ml-track-mono:    0.2em;     /* mono labels */
-  --ml-track-mono-wide: 0.32em;  /* spaced taglines (ROBOTICS · PHYSICAL AI) */
-
-  /* — Line heights ——————————————————————————— */
-  --ml-leading-tight: 1.1;
-  --ml-leading-snug:  1.4;
-  --ml-leading-body:  1.85;  /* Korean paragraphs breathe */
+  --ml-font-display: var(--font-brand);
+  --ml-font-mono: var(--font-mono);
+  --ml-font-body: var(--font-sans);
+  --ml-weight-regular: var(--fw-regular);
+  --ml-weight-medium: var(--fw-medium);
+  --ml-weight-semibold: var(--fw-semibold);
+  --ml-weight-bold: var(--fw-bold);
+  --ml-weight-black: var(--fw-extra);
+  --ml-display-xl: var(--fs-display);
+  --ml-display-l: var(--fs-h1);
+  --ml-display-m: var(--fs-h2);
+  --ml-display-s: var(--fs-h3);
+  --ml-title: var(--fs-h4);
+  --ml-body-l: var(--fs-lead);
+  --ml-body-m: var(--fs-body);
+  --ml-body-s: var(--body2-size);
+  --ml-body-xs: var(--fs-caption);
+  --ml-mono-m: var(--fs-caption);
+  --ml-mono-s: var(--fs-caption);
+  --ml-mono-xs: var(--fs-tiny);
+  --ml-track-display: var(--ls-h2);
+  --ml-track-tight: var(--ls-body);
+  --ml-track-mono: var(--ls-overline);
+  --ml-track-mono-wide: var(--ls-overline);
+  --ml-leading-tight: var(--lh-h1);
+  --ml-leading-snug: var(--lh-h4);
+  --ml-leading-body: var(--lh-body);
 }

@@ -8,7 +8,7 @@
 - 원본 221개 공개 이름 유지 + Moment 추가 기능 = 루트 export 229개
 - 원본 Storybook 931개 경로 유지 + Moment 예시 14개 = 945개 항목
 - light / dark / auto, 중첩 테마, default / ops 프로필
-- 자체 포함 폰트: Pretendard, Space Grotesk, JetBrains Mono
+- LDS 원본 폰트 선언: Pretendard JP(Pretendard) + 시스템 고정폭 스택
 
 ## 시작하기
 
@@ -53,7 +53,7 @@ export function ResearchTools() {
 
 `MdsProvider`는 기존 런타임 컨텍스트를 공유하며 테마 저장 키는 `mds-theme`입니다. 서버와 클라이언트의 첫 렌더를 맞춘 뒤 저장된 테마를 복원합니다. 기존 `LdsProvider` 이름은 호환성을 위해 그대로 제공합니다. 기존 API 이름을 보존하며 `Lockup`, `ProductLockup`, `Spinner`의 brand 표현은 Moment Lab 자산을 사용합니다. 일반 컴포넌트와 circular Spinner의 동작은 유지합니다. Moment 전용 기능은 `MomentMark`, `MomentLockup`, `MomentSourceTag`, `MonoLabel`, `EditorialCard`입니다. `core`, `theme`, `product`, `headless`, `platform`, `density`, `storybook` 하위 진입점과 원본 공개·비공개 경계도 유지합니다. `mds-conformance` CLI와 `conformance/*` 자료가 포함됩니다.
 
-기본 UI는 LDS 규격입니다. EditorialCard는 명시적으로 사용하는 콘텐츠 확장이며, 일반 콘텐츠 영역에 `data-ml-expression="editorial"`을 지정하면 ZIP 기반 둥근 표현을 선택할 수 있습니다. 데이터·네트워크·로봇 제어·안전 정책·게시 흐름은 소비 앱이 소유합니다.
+브랜드 색상·로고·CI만 Moment Lab 기준입니다. 폰트·타입 스케일·간격·모서리·그림자·모션·컴포넌트 동작은 LDS를 따릅니다. EditorialCard 같은 호환 컴포넌트도 공통 규격을 사용하며 `data-ml-expression="editorial"`에 따른 별도 시각 규격은 적용하지 않습니다. 데이터·네트워크·로봇 제어·안전 정책·게시 흐름은 소비 앱이 소유합니다.
 
 소스와 전체 문서: https://github.com/TheMomentLab/moment-design-system
 

@@ -7,7 +7,7 @@ export default {
  parameters:{storyGuide:{storyId:'lds-theme-brand-lk-robotics-logo--lk-robotics-logo',eyebrow:'Theme / Brand',title:'Moment Lab의 마크와 락업',description:'1인 로봇 소프트웨어 연구소의 정체성을 마크·가로형·세로형으로 표현합니다. 컴포넌트 구조와 상태 규칙은 MDS의 공통 규격을 따릅니다.'},docs:{description:{component:'모먼트랩의 원, 회전축과 팔을 표현한 마크. 원형 비율을 유지하고 밝고 어두운 표면에서 읽을 수 있는 단색으로 사용합니다.'}}}
 };
 export const LKRoboticsLogo={name:'개요',parameters:storyDescription('Moment Lab의 실제 마크와 락업을 크기·배경·배치별로 비교합니다.'),render:()=> <BrandPage heading={false}>
- <BrandSection title="워드마크 · 표기 제작 규정"><p>Moment Lab을 Space Grotesk 600으로 조합합니다. SVG 마크는 제공된 원본 geometry를 유지합니다. 법인명 조합이나 아웃라인 워드마크는 현재 제공하지 않습니다.</p></BrandSection>
+ <BrandSection title="워드마크 · 표기 제작 규정"><p>Moment Lab을 LDS 공통 Pretendard 600으로 조합합니다. SVG 마크는 제공된 원본 geometry를 유지합니다. 법인명 조합이나 아웃라인 워드마크는 현재 제공하지 않습니다.</p></BrandSection>
  <BrandSection title="심볼 construction verification"><BrandPanel><MomentMark size={100}/><BrandTable heads={['요소','원본 좌표']} rows={[["viewBox",'0 0 100 100'],['원호','중심 (50, 50), 반지름 30'],['팔','(50, 50) → (71, 29)'],['질량','(71, 29), 반지름 8'],['축','(50, 50), 반지름 5']]}/></BrandPanel></BrandSection>
  <BrandSection title="공식 SVG 자산"><BrandPanel><MomentMark size={80}/><a href="/moment-assets/moment-mark.svg">Moment 마크 SVG</a><p>마크 원본과 UI 조합형은 구분합니다. UI 락업은 원본 마크와 웹폰트로 렌더링합니다.</p></BrandPanel></BrandSection>
  <BrandSection title="제품 UI 파생형"><BrandGrid>{['inline','stacked','mark'].map(variant=><BrandPanel key={variant}><strong>{variant}</strong><Lockup variant={variant} height={variant==='stacked'?80:32}/></BrandPanel>)}</BrandGrid></BrandSection>
